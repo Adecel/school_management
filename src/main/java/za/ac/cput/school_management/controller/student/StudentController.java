@@ -31,11 +31,10 @@ public class StudentController {
     }
 
     public void delete(Student student) {
-
+        this.studentService.delete(student);
     }
-//
-//
-//    public List<Student> findByStudentId(String studentId) {
-//
-//    }
+
+    public List<Student> findByStudentId(String studentId) {
+        return this.studentService.findByStudentId(studentId);
+    }
 }

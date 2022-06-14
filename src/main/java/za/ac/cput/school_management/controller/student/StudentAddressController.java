@@ -21,19 +21,18 @@ public class StudentAddressController {
         this.studentAddressService = studentAddressService;
     }
 
-        @PostMapping("save")
-    public Student save(StudentAddress studentAddress) {
-        System.out.println("Save called");
-        return null;
-    }
+//        @PostMapping("save")
+//    public Student save(StudentAddress studentAddress) {
+//        return studentAddressService.save(studentAddress);
+//    }
 
 
 //    public Optional<StudentAddress> read(String studentId) {
-//
+//        return studentAddressService.save(studentAddress);
 //    }
 //
 //    public void delete(StudentAddress studentAddress) {
-//
+//        return studentAddressService.read(studentId);
 //    }
 //
 //

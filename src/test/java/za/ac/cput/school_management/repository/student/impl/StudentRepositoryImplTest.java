@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentRepositoryImplTest {
     private Student student;
     private StudentRepository repository;
-    @BeforeEach
-        void setUp(){
-        this.student = StudentFactory.build("studentId_test", "email_test", "name_test");
-        this.repository = StudentRepositoryImpl.studentRepository();
-        Student saved = this.repository.save(this.student);
-        assertSame(this.student, saved);
-    }
+//    @BeforeEach
+//        void setUp(){
+//        this.student = StudentFactory.build("studentId_test", "email_test", "name_test");
+//        this.repository = StudentRepositoryImpl.studentRepository();
+//        Student saved = this.repository.save(this.student);
+//        assertSame(this.student, saved);
+//    }
 
     @Test
     void save() {
