@@ -8,4 +8,5 @@ import java.util.List;
 public interface StudentAddressService extends IService<StudentAddress, String> {
 
         List<StudentAddress> findByStudentId(String studentId);
+        void deleteById(String studentId);
 }

@@ -1,8 +1,10 @@
 package za.ac.cput.school_management.controller.student;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.student.Student;
 import za.ac.cput.school_management.service.student.StudentService;
 
@@ -12,29 +14,37 @@ import java.util.Optional;
 @RestController
 @RequestMapping("school/student/")
 //the full address is : http://localhost:8080/school/student/save
+//the full address is : http://localhost:8080/school/student/read/studentId
 public class StudentController {
 
     private final StudentService studentService;
 
-    private StudentController(StudentService studentService){
+    @Autowired public StudentController(StudentService studentService){
         this.studentService = studentService;
     }
 
     @PostMapping("save")
-    public Student save(Student student) {
-        return studentService.save(student);
+    public ResponseEntity<Student> save(Student student) {
+        Student save = studentService.save(student);
+        return ResponseEntity.ok(save);
     }
 
-
-    public Optional<Student> read(String studentId) {
-        return studentService.read(studentId);
+    @GetMapping("read/{studentId}")
+    public ResponseEntity<Student> read(@PathVariable String studentId) {
+        Student student = this.studentService.read(studentId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return ResponseEntity.ok(student);
     }
 
-    public void delete(Student student) {
-        this.studentService.delete(student);
+    @DeleteMapping("delete")
+    public ResponseEntity<Void> delete(@PathVariable String studentId) {
+        this.studentService.deleteById(studentId);
+        return ResponseEntity.noContent().build();
     }
 
-    public List<Student> findByStudentId(String studentId) {
-        return this.studentService.findByStudentId(studentId);
+    @GetMapping("all")
+    public ResponseEntity<List<Student>> findByStudentId(String studentId) {
+        List<Student> student = this.studentService.findByStudentId(studentId);
+        return ResponseEntity.ok(student);
     }
 }
