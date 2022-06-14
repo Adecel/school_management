@@ -1,5 +1,6 @@
 package za.ac.cput.school_management.controller.student;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("school/student/")
+@Slf4j
 //the full address is : http://localhost:8080/school/student/save
 //the full address is : http://localhost:8080/school/student/read/studentId
 public class StudentController {
@@ -24,13 +26,15 @@ public class StudentController {
     }
 
     @PostMapping("save")
-    public ResponseEntity<Student> save(Student student) {
+    public ResponseEntity<Student> save(@RequestBody Student student) {
+        log.info("Save request: {}", student);
         Student save = studentService.save(student);
         return ResponseEntity.ok(save);
     }
 
     @GetMapping("read/{studentId}")
     public ResponseEntity<Student> read(@PathVariable String studentId) {
+        log.info("Read request: {}", studentId);
         Student student = this.studentService.read(studentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(student);
@@ -38,6 +42,7 @@ public class StudentController {
 
     @DeleteMapping("delete")
     public ResponseEntity<Void> delete(@PathVariable String studentId) {
+        log.info("Delete request: {}", studentId);
         this.studentService.deleteById(studentId);
         return ResponseEntity.noContent().build();
     }

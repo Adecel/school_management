@@ -2,6 +2,7 @@ package za.ac.cput.school_management.service.student.impl;
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.student.StudentAddress;
+import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import za.ac.cput.school_management.repository.student.StudentAddressRepository;
 import za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentAddressService;
@@ -29,7 +30,8 @@ public class StudentAddressServiceImpl implements StudentAddressService {
 //    }
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
-        return this.repository.save(studentAddress);
+                StudentAddress obj = StudentAddressFactory.build(studentAddress.getStudentId(), studentAddress.getAddress());
+        return this.repository.save(obj);
     }
 
     @Override

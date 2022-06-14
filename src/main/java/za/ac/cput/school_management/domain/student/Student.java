@@ -9,6 +9,9 @@ public class Student {
     private String email;
     private Name name;
 
+    private Student() {
+    }
+
     private Student(Builder builder) {
         this.studentId = builder.studentId;
         this.email = builder.email;
