@@ -10,7 +10,7 @@ public class StudentAddress {
 
     private StudentAddress(Builder builder) {
         this.studentId = builder.studentId;
-        this.address =builder.address;
+        this.address = builder.address;
     }
 
     public String getStudentId() {

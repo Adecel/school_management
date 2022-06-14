@@ -8,36 +8,37 @@ import za.ac.cput.school_management.service.student.StudentService;
 import java.util.List;
 import java.util.Optional;
 
-//public class StudentServiceImpl implements StudentService {
-//
-//    private final StudentRepository repository;
-//    private static StudentService SERVICE;
-//
-//    private StudentServiceImpl(){
-//        this.repository = StudentRepositoryImpl.studentRepository();
-//    }
-//    public static StudentService getService(){
-//        if (SERVICE == null)
-//            SERVICE = new StudentServiceImpl();
-//        return SERVICE;
-//    }
-//    @Override
-//    public StudentService save(StudentService studentService) {
-//        return (StudentService) this.repository.save((Student) studentService);
-//    }
-//
-//    @Override
-//    public Optional<StudentService> read(String studentId) {
-//        return this.repository.read(studentId);
-//    }
-//
-//    @Override
-//    public void delete(StudentService studentService) {
-//
-//    }
-//
-//    @Override
-//    public List<Student> findByStudentId(String studentId) {
-//        return null;
-//    }
-//}
+public class StudentServiceImpl implements StudentService {
+
+    private final StudentRepository repository;
+    private static StudentService SERVICE;
+
+    private StudentServiceImpl(){
+        this.repository = StudentRepositoryImpl.studentRepository();
+    }
+    public static StudentService getService(){
+        if (SERVICE == null)
+            SERVICE = new StudentServiceImpl();
+        return SERVICE;
+    }
+
+    @Override
+    public Student save(Student student) {
+        return this.repository.save(student);
+    }
+
+    @Override
+    public Optional<Student> read(String studentId) {
+        return this.repository.read(studentId);
+    }
+
+    @Override
+    public void delete(Student student) {
+        this.repository.delete(student);
+    }
+
+    @Override
+    public List<Student> findByStudentId(String studentId) {
+        return this.repository.findByStudentId(studentId);
+    }
+}
