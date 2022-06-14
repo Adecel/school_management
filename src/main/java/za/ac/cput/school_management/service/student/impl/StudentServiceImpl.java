@@ -23,12 +23,12 @@ import java.util.Optional;
 //    }
 //    @Override
 //    public StudentService save(StudentService studentService) {
-//        return this.repository.save(studentService);
+//        return (StudentService) this.repository.save((Student) studentService);
 //    }
 //
 //    @Override
-//    public Optional<StudentService> read(String s) {
-//        return this.repository.read(s);
+//    public Optional<StudentService> read(String studentId) {
+//        return this.repository.read(studentId);
 //    }
 //
 //    @Override
