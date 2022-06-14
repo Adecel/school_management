@@ -12,15 +12,4 @@ public class StudentAddressFactory {
 
         return new StudentAddress.Builder().StudentId(studentId).Address(address).build();
     }
-
-//    public static StudentAddress build(String studentId, Address address){
-//        if (studentId == null || studentId.isEmpty()){
-//            throw new IllegalArgumentException("student Id is required!");
-//        }
-//        if (address == null || address.isEmpty()){
-//            throw new IllegalArgumentException("address type is required!");
-//        }
-//
-//        return new StudentAddress.Builder().StudentId(studentId).Address(address).build();
-//    }
 }

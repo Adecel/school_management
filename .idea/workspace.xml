@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="The first commit of the project, before collaboration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/CityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentAddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentAddressRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/StudentAddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentAddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/CityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/CityFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/student/StudentAddressFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/student/StudentAddressFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/student/StudentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/student/StudentFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -53,96 +57,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="za.ac.cput.school_management.repository.lookup.impl" />
-      <recent name="za.ac.cput.school_management.factory.lookup" />
       <recent name="za.ac.cput.school_management.factory.student" />
+      <recent name="za.ac.cput.school_management.factory.lookup" />
       <recent name="za.ac.cput.school_management.factory.employee" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CityRepositoryImplTest.readAll">
-    <configuration name="CityRepositoryImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StudentAddressFactoryTest">
+    <configuration name="StudentAddressFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.factory.student.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.student" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.student.StudentAddressFactoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CityRepositoryImplTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentAddressFactoryTest.buildWithSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.factory.student.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CityRepositoryImplTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="school_management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
-      <option name="METHOD_NAME" value="read" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CityRepositoryImplTest.readAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="school_management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
-      <option name="METHOD_NAME" value="readAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CityRepositoryImplTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="school_management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
-      <option name="METHOD_NAME" value="update" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.student" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.student.StudentAddressFactoryTest" />
+      <option name="METHOD_NAME" value="buildWithSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CityRepositoryImplTest.readAll" />
-        <item itemvalue="JUnit.CityRepositoryImplTest.delete" />
-        <item itemvalue="JUnit.CityRepositoryImplTest.read" />
-        <item itemvalue="JUnit.CityRepositoryImplTest.update" />
-        <item itemvalue="JUnit.CityRepositoryImplTest" />
+        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
+        <item itemvalue="JUnit.StudentAddressFactoryTest" />
+        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
+        <item itemvalue="JUnit.StudentAddressFactoryTest" />
+        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -191,20 +153,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The first commit of the project, before collaboration" />
     <option name="LAST_COMMIT_MESSAGE" value="The first commit of the project, before collaboration" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImplTest.java</url>
-          <line>32</line>
-          <properties class="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" method="update">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
