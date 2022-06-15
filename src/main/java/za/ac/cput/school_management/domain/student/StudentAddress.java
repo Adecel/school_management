@@ -9,6 +9,9 @@ public class StudentAddress {
     @NotNull private String studentId;
     @NotNull private Address address;
 
+    public StudentAddress() {
+    }
+
     private StudentAddress(Builder builder) {
         this.studentId = builder.studentId;
         this.address = builder.address;
