@@ -5,6 +5,6 @@ import za.ac.cput.school_management.repository.IRepository;
 
 import java.util.List;
 
-public interface StudentRepository extends IRepository<Student, String> {
+public interface StudentRepository extends JpaR<Student, String> {
         List<Student> findByStudentId(String studentId);
 }
