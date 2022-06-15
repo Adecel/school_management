@@ -30,8 +30,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student save(Student student) {
-        Student obj = StudentFactory.build(student.getStudentId(), student.getEmail(), student.getName());
-        return this.repository.save(obj);
+//        Student obj = StudentFactory.build(student.getStudentId(), student.getEmail(), student.getName());
+        return this.repository.save(student);
     }
 
     @Override

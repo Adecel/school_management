@@ -2,11 +2,12 @@ package za.ac.cput.school_management.domain.student;
 
 import za.ac.cput.school_management.domain.lookup.Address;
 
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class StudentAddress {
-    private String studentId;
-    private Address address;
+    @NotNull private String studentId;
+    @NotNull private Address address;
 
     private StudentAddress(Builder builder) {
         this.studentId = builder.studentId;

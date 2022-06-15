@@ -30,8 +30,8 @@ public class StudentAddressServiceImpl implements StudentAddressService {
 //    }
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
-                StudentAddress obj = StudentAddressFactory.build(studentAddress.getStudentId(), studentAddress.getAddress());
-        return this.repository.save(obj);
+//        StudentAddress obj = StudentAddressFactory.build(studentAddress.getStudentId(), studentAddress.getAddress());
+        return this.repository.save(studentAddress);
     }
 
     @Override

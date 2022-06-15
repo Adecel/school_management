@@ -4,11 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.student.StudentAddress;
+import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import za.ac.cput.school_management.service.student.StudentAddressService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,9 +29,16 @@ public class StudentAddressController {
     }
 
     @PostMapping("save")
-    public ResponseEntity<StudentAddress> save(@RequestBody StudentAddress studentAddress) {
+    public ResponseEntity<StudentAddress> save(@Valid @RequestBody StudentAddress studentAddress) {
         log.info("Save request: {}", studentAddress);
 //        System.out.println(String.format("Save request: %s", studentAddress));
+
+//        StudentAddress obj;
+//        try {
+//            obj = StudentAddressFactory.build(studentAddress.getStudentId(), studentAddress.getAddress());
+//        }catch (IllegalArgumentException e){
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+//        }
         StudentAddress save = studentAddressService.save(studentAddress);
         return ResponseEntity.ok(save);
     }
