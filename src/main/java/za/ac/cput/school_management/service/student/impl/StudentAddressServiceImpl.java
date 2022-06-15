@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.student.StudentAddress;
 import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import za.ac.cput.school_management.repository.student.StudentAddressRepository;
-import za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl;
+//import za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentAddressService;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class StudentAddressServiceImpl implements StudentAddressService {
 
     @Override
     public Optional<StudentAddress> read(String studentId) {
-        return this.repository.read(studentId);
+        return this.repository.findById(studentId);
     }
 
     @Override
@@ -45,6 +45,7 @@ public class StudentAddressServiceImpl implements StudentAddressService {
     }
 
     @Override
+    //public List<Student> findAll
     public List<StudentAddress> findByStudentId(String studentId) {
         return this.repository.findByStudentId(studentId);
     }

@@ -1,15 +1,20 @@
 package za.ac.cput.school_management.domain.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.school_management.domain.lookup.Address;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
+@Entity
 public class StudentAddress {
-    @NotNull private String studentId;
+
+    @NotNull @Id private String studentId;
     @NotNull private Address address;
 
-    public StudentAddress() {
+    protected StudentAddress() {
     }
 
     private StudentAddress(Builder builder) {
