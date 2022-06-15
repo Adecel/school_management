@@ -7,11 +7,13 @@ package za.ac.cput.school_management.domain.employee;
  * */
 
 import za.ac.cput.school_management.domain.lookup.Address;
-
-
+import com.sun.istack.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
-
+@Entity
 public class EmployeeAddress {
+    @Id @NotNull
 	private String staffId;
 	private Address address;
 

@@ -7,18 +7,13 @@ package za.ac.cput.school_management.factory.lookup;
  * */
 
 
+
 import za.ac.cput.school_management.domain.lookup.Country;
 
 
 public class CountryFactory {
 
-        public static Country newcountry(String id, String name){
-
-
-
-        return new Country.Builder().setId(id)
-                .setName(name)
-                .build();
+        public static Country getCountry(String id, String name){
+        return new Country.Builder(id).Name(name).build();
     }
-
 }

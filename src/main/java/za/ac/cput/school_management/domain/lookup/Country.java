@@ -6,61 +6,81 @@ package za.ac.cput.school_management.domain.lookup;
  *(Term 2 Exam)
  * */
 
-public class Country {
+import com.sun.istack.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Objects;
+
+
+    public class Country {
+
+    @Id @NotNull  
 	private String id;
 	private String name;
 
 
-private Country(Builder builder){
+	public Country(Builder builder){
     this.id = builder.id;
 	this.name = builder.name;
 
 }
 
- public String getId() {
+    public Country() {
+
+    }
+
+    public String getId() {
         return id;
     }
 
- public String getName() {
+    public String getName() {
         return name;
     }
 
- public void setId(String id) {
-        this.id = id;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Country country = (Country) o;
+        return id.equals(country.id) && name.equals(country.name) ;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
-@Override
+    @Override
     public String toString() {
         return "Country{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
     }
-
        //Builder
     public static class Builder {
         private String id;
         private String name;
-      
-        //Builder setters
 
-        public Builder setId(String id) {
+
+           //Builder setters
+
+        public Builder  (String id) {
             this.id = id;
-            return this;
+
         }
 
-        public Builder setName(String name) {
+        public Builder Name (String name) {
             this.name = name;
             return this;
+
         }
 
 
         public Country build() {
             return new Country(this);
         }
-    }
+
+       }
 }
