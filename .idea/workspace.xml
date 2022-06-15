@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="pushing all about Repository and service (the IRepository and the IService are complite now)  the controller is also ready.">
+    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="Adecel Mabiala : I have spring-boot-starter-validation, and i have comment junit for testing (add spring-boot-starter-test &quot;for test purpose, as sir said spring-boot provide a testing for us&quot;)  -&gt; any question please text me.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/controller/student/StudentAddressControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/controller/student/StudentControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,6 +38,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -50,6 +58,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -62,12 +71,58 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="za.ac.cput.school_management.controller.student" />
+      <recent name="za.ac.cput.school_management.service.student.impl" />
+      <recent name="za.ac.cput.school_management.repository.student.impl" />
       <recent name="za.ac.cput.school_management.factory.student" />
       <recent name="za.ac.cput.school_management.factory.lookup" />
-      <recent name="za.ac.cput.school_management.factory.employee" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StudentAddressFactoryTest">
+  <component name="RunManager" selected="JUnit.StudentAddressControllerTest.save">
+    <configuration name="SchoolManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.SchoolManagementSystem" />
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentAddressControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.controller.student.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.controller.student" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.controller.student.StudentAddressControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentAddressControllerTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.controller.student.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.controller.student" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.controller.student.StudentAddressControllerTest" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StudentAddressFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
@@ -101,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StudentAddressControllerTest.save" />
+        <item itemvalue="JUnit.StudentAddressControllerTest" />
+        <item itemvalue="Application.SchoolManagementSystem" />
         <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
         <item itemvalue="JUnit.StudentAddressFactoryTest" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +187,56 @@
       <option name="project" value="LOCAL" />
       <updated>1655169638099</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pushing my intern branch on my github branch 219197229">
+      <created>1655195477073</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655195477073</updated>
+    </task>
+    <task id="LOCAL-00004" summary="pushing the my controller codes, and the update version of the pom file including spring-boot">
+      <created>1655225349568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655225349568</updated>
+    </task>
+    <task id="LOCAL-00005" summary="pushing my controller code">
+      <created>1655228155461</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655228155461</updated>
+    </task>
+    <task id="LOCAL-00006" summary="i update the pom file again, this time i have the lombok">
+      <created>1655246220737</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655246220737</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adecel Mabiala : pushing my controllers (Student and StudentAddress)">
+      <created>1655250090549</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655250090549</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adecel Mabiala : pushing my controllers (Student and StudentAddress)">
+      <created>1655257642560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655257642560</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adecel Mabiala : I have spring-boot-starter-validation, and i have comment junit for testing (add spring-boot-starter-test &quot;for test purpose, as sir said spring-boot provide a testing for us&quot;)  -&gt; any question please text me.">
+      <created>1655263180279</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655263180279</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +253,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The first commit of the project, before collaboration" />
     <MESSAGE value="pushing all about Repository and service (the IRepository and the IService are complite now)  the controller is also ready." />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing all about Repository and service (the IRepository and the IService are complite now)  the controller is also ready." />
+    <MESSAGE value="pushing my intern branch on my github branch 219197229" />
+    <MESSAGE value="pushing the my controller codes, and the update version of the pom file including spring-boot" />
+    <MESSAGE value="pushing my controller code" />
+    <MESSAGE value="i update the pom file again, this time i have the lombok" />
+    <MESSAGE value="Adecel Mabiala : pushing my controllers (Student and StudentAddress)" />
+    <MESSAGE value="Adecel Mabiala : I have spring-boot-starter-validation, and i have comment junit for testing (add spring-boot-starter-test &quot;for test purpose, as sir said spring-boot provide a testing for us&quot;)  -&gt; any question please text me." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adecel Mabiala : I have spring-boot-starter-validation, and i have comment junit for testing (add spring-boot-starter-test &quot;for test purpose, as sir said spring-boot provide a testing for us&quot;)  -&gt; any question please text me." />
   </component>
 </project>

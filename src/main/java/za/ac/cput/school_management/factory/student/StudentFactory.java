@@ -1,9 +1,8 @@
 package za.ac.cput.school_management.factory.student;
 
-import za.ac.cput.school_management.domain.lookup.Name;
 import za.ac.cput.school_management.domain.student.Student;
+import za.ac.cput.school_management.domain.lookup.Name;
 import za.ac.cput.school_management.helper.Helper;
-
 
 public class StudentFactory {
 
@@ -12,7 +11,7 @@ public class StudentFactory {
         Helper.checkStringParam("email", email);
         Helper.checkStringParam("name", String.valueOf(name));
 
-        return new Student.Builder().StudentId(studentId).Email(email).Name(name).build();
+       return new Student.Builder().StudentId(studentId).Email(email).Name(name).build();
     }
 
 

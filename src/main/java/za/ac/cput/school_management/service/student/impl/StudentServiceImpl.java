@@ -1,6 +1,8 @@
 package za.ac.cput.school_management.service.student.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.student.Student;
+import za.ac.cput.school_management.factory.student.StudentFactory;
 import za.ac.cput.school_management.repository.student.StudentRepository;
 import za.ac.cput.school_management.repository.student.impl.StudentRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentService;
@@ -8,9 +10,13 @@ import za.ac.cput.school_management.service.student.StudentService;
 import java.util.List;
 import java.util.Optional;
 
-//public class StudentServiceImpl implements StudentService {
-//
-//    private final StudentRepository repository;
+@Service
+public class StudentServiceImpl implements StudentService {
+    private final StudentRepository repository;
+
+    public StudentServiceImpl(StudentRepository repository) {
+        this.repository = repository;
+    }
 //    private static StudentService SERVICE;
 //
 //    private StudentServiceImpl(){
@@ -21,23 +27,31 @@ import java.util.Optional;
 //            SERVICE = new StudentServiceImpl();
 //        return SERVICE;
 //    }
-//    @Override
-//    public StudentService save(StudentService studentService) {
-//        return (StudentService) this.repository.save((Student) studentService);
-//    }
-//
-//    @Override
-//    public Optional<StudentService> read(String studentId) {
-//        return this.repository.read(studentId);
-//    }
-//
-//    @Override
-//    public void delete(StudentService studentService) {
-//
-//    }
-//
-//    @Override
-//    public List<Student> findByStudentId(String studentId) {
-//        return null;
-//    }
-//}
+
+    @Override
+    public Student save(Student student) {
+//        Student obj = StudentFactory.build(student.getStudentId(), student.getEmail(), student.getName());
+        return this.repository.save(student);
+    }
+
+    @Override
+    public Optional<Student> read(String studentId) {
+        return this.repository.read(studentId);
+    }
+
+    @Override
+    public void delete(Student student) {
+        this.repository.delete(student);
+    }
+
+    @Override
+    public List<Student> findByStudentId(String studentId) {
+        return this.repository.findByStudentId(studentId);
+    }
+
+    @Override
+    public void deleteById(String studentId) {
+        Optional<Student> student = read(studentId);
+        if (student.isPresent()) delete(student.get());
+    }
+}
