@@ -1,0 +1,252 @@
+Index: src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npackage za.ac.cput.school_management.factory.lookup;\r\n\r\nimport org.junit.jupiter.api.Test;\r\nimport za.ac.cput.school_management.domain.lookup.City;\r\nimport za.ac.cput.school_management.domain.lookup.Country;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\n/**\r\n *\r\n */\r\nclass CityFactoryTest\r\n{\r\n    City city;\r\n    @Test\r\n    void getCity() {\r\n        city = CityFactory.getCity(\"12344\",\"Yaounde\",new Country());\r\n        assertNotNull(city);\r\n        System.out.println(city);\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java b/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java
+--- a/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java	(revision a4763d5f23ca6a146cb1700ab14d8134a0fcc7b1)
++++ b/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java	(date 1655224421600)
+@@ -12,10 +12,9 @@
+  */
+ class CityFactoryTest
+ {
+-    City city;
++    City city = CityFactory.getCity("12344","Yaounde",null);
+     @Test
+     void getCity() {
+-        city = CityFactory.getCity("12344","Yaounde",new Country());
+         assertNotNull(city);
+         System.out.println(city);
+     }
+Index: src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package za.ac.cput.school_management.repository.employee.impl;\r\n\r\npublic class EmployeeAddressRepositoryImpl {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java b/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java
+--- a/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java	(revision a4763d5f23ca6a146cb1700ab14d8134a0fcc7b1)
++++ b/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java	(date 1655223896712)
+@@ -1,4 +1,51 @@
+ package za.ac.cput.school_management.repository.employee.impl;
+ 
+-public class EmployeeAddressRepositoryImpl {
++
++import za.ac.cput.school_management.domain.employee.EmployeeAddress;
++import za.ac.cput.school_management.repository.employee.EmployeeAddressRepository;
++
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Optional;
++import java.util.stream.Collectors;
++
++
++public class EmployeeAddressRepositoryImpl extends EmployeeAddressRepository {
++
++    private final List<EmployeeAddress> employeeAddressList;
++    private static za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl STUDENT_ADDRESS_REPOSITORY;
++
++    private EmployeeAddressRepositoryImpl(){
++        this.employeeAddressList = new ArrayList<>();
++    }
++
++
++
++    @Override
++    public EmployeeAddress save(EmployeeAddress employeeAddress) {
++        Optional<EmployeeAddress> read = read(employeeAddress.getStaffId());
++        if (read.isPresent()){
++            delete(read.get());
++        }
++        this.employeeAddressList.add(employeeAddress);
++        return employeeAddress;
++    }
++
++    public Optional<EmployeeAddress> read(String staffId) {
++        return  this.employeeAddressList.stream().filter(g -> g.getStaffId().equalsIgnoreCase(staffId))
++                .findFirst();
++    }
++
++    @Override
++    public void delete(EmployeeAddress employeeAddress) {
++        this.employeeAddressList.remove(employeeAddress);
++    }
++
++    @Override
++    public List<EmployeeAddress> findByStaffId(String staffId) {
++        return this.employeeAddressList.stream()
++                .filter(g -> g.getStaffId().equalsIgnoreCase(staffId))
++                .collect(Collectors.toList());
++    }
+ }
+Index: src/main/java/za/ac/cput/school_management/factory/lookup/CountryFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package za.ac.cput.school_management.factory.lookup;\r\n\r\n/*\r\n * Author : Mogamad Tawfeeq Cupido\r\n * Student Number : 216266882\r\n *(Term 2 Exam)\r\n * */\r\n\r\n\r\nimport za.ac.cput.school_management.domain.lookup.Country;\r\n\r\n\r\npublic class CountryFactory {\r\n\r\n        public static Country newcountry(String id, String name){\r\n\r\n\r\n\r\n        return new Country.Builder().setId(id)\r\n                .setName(name)\r\n                .build();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/school_management/factory/lookup/CountryFactory.java b/src/main/java/za/ac/cput/school_management/factory/lookup/CountryFactory.java
+--- a/src/main/java/za/ac/cput/school_management/factory/lookup/CountryFactory.java	(revision a4763d5f23ca6a146cb1700ab14d8134a0fcc7b1)
++++ b/src/main/java/za/ac/cput/school_management/factory/lookup/CountryFactory.java	(date 1655218604934)
+@@ -7,18 +7,13 @@
+  * */
+ 
+ 
++
+ import za.ac.cput.school_management.domain.lookup.Country;
+ 
+ 
+ public class CountryFactory {
+ 
+-        public static Country newcountry(String id, String name){
+-
+-
+-
+-        return new Country.Builder().setId(id)
+-                .setName(name)
+-                .build();
++        public static Country getCountry(String id, String name){
++        return new Country.Builder(id).Name(name).build();
+     }
+-
+-}
++}
+\ No newline at end of file
+Index: src/main/java/za/ac/cput/school_management/domain/lookup/Country.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package za.ac.cput.school_management.domain.lookup;\r\n\r\n/*\r\n * Author : Mogamad Tawfeeq Cupido\r\n * Student Number : 216266882\r\n *(Term 2 Exam)\r\n * */\r\n\r\npublic class Country {\r\n\tprivate String id;\r\n\tprivate String name;\r\n\r\n\r\nprivate Country(Builder builder){\r\n    this.id = builder.id;\r\n\tthis.name = builder.name;\r\n\r\n}\r\n\r\n public String getId() {\r\n        return id;\r\n    }\r\n\r\n public String getName() {\r\n        return name;\r\n    }\r\n\r\n public void setId(String id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n@Override\r\n    public String toString() {\r\n        return \"Country{\" +\r\n                \"id='\" + id + '\\'' +\r\n                \", name='\" + name + '\\'' +\r\n                '}';\r\n    }\r\n\r\n       //Builder\r\n    public static class Builder {\r\n        private String id;\r\n        private String name;\r\n      \r\n        //Builder setters\r\n\r\n        public Builder setId(String id) {\r\n            this.id = id;\r\n            return this;\r\n        }\r\n\r\n        public Builder setName(String name) {\r\n            this.name = name;\r\n            return this;\r\n        }\r\n\r\n\r\n        public Country build() {\r\n            return new Country(this);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java b/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java
+--- a/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java	(revision a4763d5f23ca6a146cb1700ab14d8134a0fcc7b1)
++++ b/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java	(date 1655224421548)
+@@ -6,18 +6,30 @@
+  *(Term 2 Exam)
+  * */
+ 
++import com.sun.istack.NotNull;
++import javax.persistence.Entity;
++import javax.persistence.Id;
++import java.util.Objects;
++
++
+ public class Country {
++
++    @Id @NotNull  
+ 	private String id;
+ 	private String name;
+ 
+ 
+-private Country(Builder builder){
++public Country(Builder builder){
+     this.id = builder.id;
+ 	this.name = builder.name;
+ 
+ }
+ 
+- public String getId() {
++    public Country() {
++
++    }
++
++    public String getId() {
+         return id;
+     }
+ 
+@@ -25,42 +37,50 @@
+         return name;
+     }
+ 
+- public void setId(String id) {
+-        this.id = id;
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++        Country country = (Country) o;
++        return id.equals(country.id) && name.equals(country.name) ;
+     }
+ 
+-    public void setName(String name) {
+-        this.name = name;
++    @Override
++    public int hashCode() {
++        return Objects.hash(id, name);
+     }
+ 
+-@Override
++    @Override
+     public String toString() {
+         return "Country{" +
+                 "id='" + id + '\'' +
+                 ", name='" + name + '\'' +
+                 '}';
+     }
+-
+        //Builder
+     public static class Builder {
+         private String id;
+         private String name;
+-      
+-        //Builder setters
++
++
++           //Builder setters
+ 
+-        public Builder setId(String id) {
++        public Builder  (String id) {
+             this.id = id;
+-            return this;
++
+         }
+ 
+-        public Builder setName(String name) {
++        public Builder Name (String name) {
+             this.name = name;
+             return this;
++
+         }
+ 
+ 
+         public Country build() {
+             return new Country(this);
+         }
+-    }
++
++       }
+ }
+Index: src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package za.ac.cput.school_management.domain.employee;\r\n\r\n/*\r\n * Author : Mogamad Tawfeeq Cupido\r\n * Student Number : 216266882\r\n *(Term 2 Exam)\r\n * */\r\n\r\nimport za.ac.cput.school_management.domain.lookup.Address;\r\n\r\n\r\nimport java.util.Objects;\r\n\r\npublic class EmployeeAddress {\r\n\tprivate String staffId;\r\n\tprivate Address address;\r\n\r\n\r\nprivate EmployeeAddress(Builder builder){\r\n    this.staffId = builder.staffId;\r\n\tthis.address = builder.address;\r\n\r\n}\r\n\r\n public String getStaffId() {\r\n        return staffId;\r\n    }\r\n\r\n public Address getAddress() {\r\n        return address;\r\n    }\r\n\r\n /*public void setStaffId(String staffId) {\r\n        this.staffId = staffId;\r\n    }\r\n\r\npublic void setAddress(Address address) {\r\n        this.address = address;\r\n    }*/\r\n\r\n@Override\r\n    public String toString() {\r\n        return \"EmployeeAddress{\" +\r\n                \"staffId='\" + staffId + '\\'' +\r\n                \", address='\" + address + '\\'' +\r\n                '}';\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (o == null || getClass() != o.getClass()) return false;\r\n        EmployeeAddress that = (EmployeeAddress) o;\r\n        return staffId.equals(that.staffId) && address.equals(that.address);\r\n    }\r\n\r\n    @Override\r\n    public int hashCode() {\r\n        return Objects.hash(staffId, address);\r\n    }\r\n\r\n        //Builder\r\n    public static class Builder {\r\n        private String staffId;\r\n        private Address address;\r\n      \r\n        //Builder setters\r\n\r\n        public Builder StaffId(String staffId) {\r\n            this.staffId = staffId;\r\n            return this;\r\n        }\r\n\r\n        public Builder Address(Address address) {\r\n            this.address = address;\r\n            return this;\r\n        }\r\n\r\n         public EmployeeAddress.Builder copy(EmployeeAddress employeeAddress) {\r\n            this.staffId = employeeAddress.staffId;\r\n            this.address = employeeAddress.address;\r\n           \r\n            return this;\r\n        }\r\n\r\n        public EmployeeAddress build() {\r\n            return new EmployeeAddress(this);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java b/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java
+--- a/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java	(revision a4763d5f23ca6a146cb1700ab14d8134a0fcc7b1)
++++ b/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java	(date 1655223449790)
+@@ -7,11 +7,13 @@
+  * */
+ 
+ import za.ac.cput.school_management.domain.lookup.Address;
+-
+-
++import com.sun.istack.NotNull;
++import javax.persistence.Entity;
++import javax.persistence.Id;
+ import java.util.Objects;
+-
++@Entity
+ public class EmployeeAddress {
++    @Id @NotNull
+ 	private String staffId;
+ 	private Address address;
+ 
