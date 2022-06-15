@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\test",
+    "\\test\\java",
+    "\\test\\java\\za",
+    "\\test\\java\\za\\ac",
+    "\\test\\java\\za\\ac\\cput",
+    "\\test\\java\\za\\ac\\cput\\school_management",
+    "\\test\\java\\za\\ac\\cput\\school_management\\repository",
+    "\\test\\java\\za\\ac\\cput\\school_management\\repository\\lookup",
+    "\\test\\java\\za\\ac\\cput\\school_management\\repository\\lookup\\impl"
+  ],
+  "SelectedNode": "\\test\\java\\za\\ac\\cput\\school_management\\repository\\lookup\\impl\\CountryRepositoryImplTest.java",
+  "PreviewInSolutionExplorer": false
+}
