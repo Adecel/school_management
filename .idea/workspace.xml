@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="Updated my Country class and EmployeeAddress Entity">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_06_12__18_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_06_12__18_11__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/src/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.vs/src/FileContentIndex/b81af3f4-e7a7-4cdb-92b2-dcc46fc02f54.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/src/.vs/src/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/employee/EmployeeAddressFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/employee/EmployeeAddressFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,17 +81,17 @@
       <recent name="za.ac.cput.school_management.controller.student" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CountryServiceImplTest">
-    <configuration name="CountryRepositoryImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EmployeeAddressFactoryTest.buildWithSuccess">
+    <configuration name="CountryFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.factory.lookup.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CountryRepositoryImplTest" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.lookup" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.lookup.CountryFactoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,17 +112,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeAddressRepositoryImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeAddressFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.repository.employee.impl.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.factory.employee.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.employee.impl" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.employee.impl.EmployeeAddressRepositoryImplTest" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.employee" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.employee.EmployeeAddressFactoryTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeAddressFactoryTest.buildWithSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.factory.employee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.employee" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.employee.EmployeeAddressFactoryTest" />
+      <option name="METHOD_NAME" value="buildWithSuccess" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,29 +158,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentAddressControllerTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="school_management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.controller.student.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.controller.student" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.controller.student.StudentAddressControllerTest" />
-      <option name="METHOD_NAME" value="save" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmployeeAddressFactoryTest.buildWithSuccess" />
+        <item itemvalue="JUnit.EmployeeAddressFactoryTest" />
+        <item itemvalue="JUnit.CountryFactoryTest" />
         <item itemvalue="JUnit.CountryServiceImplTest" />
         <item itemvalue="JUnit.EmployeeAddressServiceImplTest" />
-        <item itemvalue="JUnit.CountryRepositoryImplTest" />
-        <item itemvalue="JUnit.EmployeeAddressRepositoryImplTest" />
-        <item itemvalue="JUnit.StudentAddressControllerTest.save" />
       </list>
     </recent_temporary>
   </component>

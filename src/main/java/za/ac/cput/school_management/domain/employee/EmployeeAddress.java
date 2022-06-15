@@ -10,11 +10,14 @@ import za.ac.cput.school_management.domain.lookup.Address;
 import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import java.util.Objects;
+
 @Entity
 public class EmployeeAddress {
     @Id @NotNull
 	private String staffId;
+    @Lob
 	private Address address;
 
 

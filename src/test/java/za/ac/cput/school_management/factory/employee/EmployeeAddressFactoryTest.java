@@ -22,7 +22,7 @@ class EmployeeAddressFactoryTest {
         System.out.println(employeeAddress);
         assertAll(
                 () -> assertNotNull(employeeAddress),
-                () -> assertNotNull(employeeAddress.getAddress())
+                () -> assertNull(employeeAddress.getAddress())
         );
     }
 
