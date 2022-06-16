@@ -1,7 +1,6 @@
 package za.ac.cput.school_management.controller.student;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -14,6 +13,7 @@ import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class StudentAddressControllerTest {
 
     @LocalServerPort
@@ -26,30 +26,54 @@ class StudentAddressControllerTest {
 
     @BeforeEach
     void setUp() {
-        assertNotNull(controller);
-//        this.studentAddress = StudentAddressFactory.build("StdID", "F6, Parkland");
+        this.studentAddress = StudentAddressFactory
+                .build("Studient_ID", null);
         this.baseUrl = "http://localhost:"+ this.port + "/school/student-address/";
     }
 
     @Test
+    @Order(1)
     void save() {
+        String url = baseUrl + "save";
+        System.out.println(url);
+        ResponseEntity<StudentAddress> response = this.restTemplate
+                .postForEntity(url, this.studentAddress, StudentAddress.class);
+        System.out.println(response);
+        assertAll(
+                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                () -> assertNotNull(response.getBody())
+        );
     }
 
     @Test
+    @Order(2)
     void read() {
         String url = baseUrl + "read/" + this.studentAddress.getStudentId();
         System.out.println(url);
         ResponseEntity<StudentAddress> response = this.restTemplate.getForEntity(url, StudentAddress.class);
         assertAll(
-                () -> assertEquals(HttpStatus.OK, response.getStatusCode())
+                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                () -> assertNotNull(response.getBody())
         );
     }
 
     @Test
+    @Order(3)
     void delete() {
+        String url = baseUrl + "delete/" + this.studentAddress.getStudentId();
+        this.restTemplate.delete(url);
     }
 
     @Test
-    void findByStudentId() {
+    @Order(4)
+    //void findByStudentId() {
+    void findAll() {
+        String url = baseUrl + "all";
+        System.out.println(url);
+        ResponseEntity<StudentAddress[]> response = this.restTemplate.getForEntity(url, StudentAddress[].class);
+        assertAll(
+                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                () -> assertTrue(response.getBody().length == 0)
+        );
     }
 }

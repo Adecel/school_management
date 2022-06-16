@@ -4,14 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="Updated my Country class and EmployeeAddress Entity">
+    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="Adecel Mabiala : I have mysql-connector-java dependency on the pom file">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/FileContentIndex/3757c1b6-7392-42c9-a291-49d452e21544.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/FileContentIndex/3a27fce4-b70a-46cf-a208-badb9d4bedd2.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/FileContentIndex/4bae1f0e-cee7-4f60-bfd6-33fcc01b2c86.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/FileContentIndex/9da8c9f9-8e91-470d-a4e9-9aae20bebd53.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.vs/src/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/src/.vs/src/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/employee/EmployeeAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.vs/src/v17/TestStore/0/000.testlog" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/employee/EmployeeAddressFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/employee/EmployeeAddressFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/student/StudentAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/student/StudentAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/NameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/NameFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/employee/EmployeeAddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/employee/EmployeeAddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/impl/CountryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/impl/CountryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentAddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentAddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentAddressRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentAddressRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/student/impl/StudentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/employee/EmployeeAddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/employee/EmployeeAddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/employee/impl/EmployeeAddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/employee/impl/EmployeeAddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/lookup/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/lookup/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/lookup/impl/CountryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/lookup/impl/CountryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentAddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentAddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/service/student/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/controller/student/StudentAddressControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/controller/student/StudentAddressControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/employee/impl/EmployeeAddressRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/lookup/impl/CountryRepositoryImplTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -42,11 +69,35 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
         <option value="master" />
       </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -59,9 +110,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../school_management_2" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -74,24 +136,37 @@
       <recent name="za.ac.cput.school_management.repository.lookup" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="za.ac.cput.school_management.repository.employee.impl" />
+      <recent name="za.ac.cput.school_management.repository.lookup.impl" />
+      <recent name="za.ac.cput.school_management.factory.lookup" />
       <recent name="za.ac.cput.school_management.service.lookup.impl" />
       <recent name="za.ac.cput.school_management.service.employee.impl" />
-      <recent name="za.ac.cput.school_management.repository.lookup.impl" />
-      <recent name="za.ac.cput.school_management.repository.employee.impl" />
-      <recent name="za.ac.cput.school_management.controller.student" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeeAddressFactoryTest.buildWithSuccess">
-    <configuration name="CountryFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.SchoolManagementSystem">
+    <configuration name="SchoolManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.SchoolManagementSystem" />
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.factory.lookup.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.lookup" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.lookup.CountryFactoryTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CountryRepositoryImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CountryRepositoryImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,33 +187,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeAddressFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeAddressRepositoryImplTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.factory.employee.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.employee.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.employee" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.employee.EmployeeAddressFactoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.employee.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.employee.impl.EmployeeAddressRepositoryImplTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeAddressFactoryTest.buildWithSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeAddressServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.factory.employee.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.service.employee.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.employee" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.employee.EmployeeAddressFactoryTest" />
-      <option name="METHOD_NAME" value="buildWithSuccess" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.service.employee.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.service.employee.impl.EmployeeAddressServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EmployeeAddressFactoryTest.buildWithSuccess" />
-        <item itemvalue="JUnit.EmployeeAddressFactoryTest" />
-        <item itemvalue="JUnit.CountryFactoryTest" />
+        <item itemvalue="Application.SchoolManagementSystem" />
         <item itemvalue="JUnit.CountryServiceImplTest" />
         <item itemvalue="JUnit.EmployeeAddressServiceImplTest" />
+        <item itemvalue="JUnit.EmployeeAddressRepositoryImplTest.update" />
+        <item itemvalue="JUnit.CountryRepositoryImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +251,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654777183367</updated>
+      <workItem from="1655297666133" duration="4888000" />
+      <workItem from="1655322356447" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="The first commit of the project, before collaboration">
       <created>1654788335770</created>
@@ -247,8 +324,18 @@
       <option name="project" value="LOCAL" />
       <updated>1655281705552</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Adecel Mabiala : I have mysql-connector-java dependency on the pom file">
+      <created>1655298802103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655298802103</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -272,7 +359,8 @@
     <MESSAGE value="Adecel Mabiala : pushing my controllers (Student and StudentAddress)" />
     <MESSAGE value="Adecel Mabiala : I have spring-boot-starter-validation, and i have comment junit for testing (add spring-boot-starter-test &quot;for test purpose, as sir said spring-boot provide a testing for us&quot;)  -&gt; any question please text me." />
     <MESSAGE value="Updated my Country class and EmployeeAddress Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated my Country class and EmployeeAddress Entity" />
+    <MESSAGE value="Adecel Mabiala : I have mysql-connector-java dependency on the pom file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adecel Mabiala : I have mysql-connector-java dependency on the pom file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/school_management$CountryFactoryTest_getCountry.ic" NAME="CountryFactoryTest.getCountry Coverage Results" MODIFIED="1655277097510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -7,16 +7,18 @@ package za.ac.cput.school_management.domain.lookup;
  * */
 
 import com.sun.istack.NotNull;
-import javax.persistence.Entity;
+
+import javax.persistence.Embeddable;
+
 import javax.persistence.Id;
 import java.util.Objects;
 
-    @Entity
+    @Embeddable
     public class Country {
 
-    @Id @NotNull  
-	private String id;
-	private String name;
+
+    @Id @NotNull  private String id;
+                  private String name;
 
 
 	public Country(Builder builder){
@@ -25,8 +27,10 @@ import java.util.Objects;
 
 }
 
-    public Country() {
+    public Country(String id, String name) {
 
+        this.id = id;
+        this.name = name;
     }
 
     public String getId() {

@@ -1,51 +1,57 @@
 package za.ac.cput.school_management.repository.employee.impl;
 
 
-import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
-import za.ac.cput.school_management.repository.employee.EmployeeAddressRepository;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
-@Repository
-public class EmployeeAddressRepositoryImpl implements EmployeeAddressRepository {
 
-    private final List<EmployeeAddress> employeeAddressList;
-    private static za.ac.cput.school_management.repository.employee.impl.EmployeeAddressRepositoryImpl EMPLOYEE_ADDRESS_REPOSITORY;
-    private EmployeeAddressRepositoryImpl(){
-        this.employeeAddressList = new ArrayList<>();
+public class EmployeeAddressRepositoryImpl {
+
+    private List<EmployeeAddress> ea_db = new ArrayList<>();
+    //private employeeAddressRepository ea_db;
+    private static EmployeeAddressRepositoryImpl employeeAddressRepository = null;
+
+    private EmployeeAddressRepositoryImpl() {
     }
 
-
-    @Override
-    public EmployeeAddress save(EmployeeAddress employeeAddress) {
-        Optional<EmployeeAddress> read = read(employeeAddress.getStaffId());
-        if (read.isPresent()){
-            delete(read.get());
+    public static EmployeeAddressRepositoryImpl getEmployeeAddressRepository() {
+        if (employeeAddressRepository == null) {
+            employeeAddressRepository = new EmployeeAddressRepositoryImpl();
         }
-        this.employeeAddressList.add(employeeAddress);
-        return employeeAddress;
+        return employeeAddressRepository;
     }
 
-    @Override
-    public Optional<EmployeeAddress> read(String staffId) {
-        return  this.employeeAddressList.stream().filter(g -> g.getStaffId().equalsIgnoreCase(staffId))
-                .findFirst();
+    EmployeeAddress create(EmployeeAddress employeeAddress) {
+        boolean result = ea_db.add(employeeAddress);
+        if (result) {
+            return employeeAddress;
+        }
+        return null;
     }
 
-    @Override
-    public void delete(EmployeeAddress employeeAddress) {
-        this.employeeAddressList.remove(employeeAddress);
+    EmployeeAddress update(EmployeeAddress employeeAddress) {
+        EmployeeAddress result = read(employeeAddress.getStaffId());
+        if (result != null) {
+            ea_db.remove(result);
+            ea_db.add(employeeAddress);
+            return employeeAddress;
+        }
+        return null;
     }
 
-    @Override
-    public List<EmployeeAddress> findByStaffId(String staffId) {
-        return this.employeeAddressList.stream()
-                .filter(g -> g.getStaffId().equalsIgnoreCase(staffId))
-                .collect(Collectors.toList());
+    EmployeeAddress read(String id) {
+        return ea_db.stream().filter(s -> s.getStaffId().equals(id)).findAny().orElse(null);
+    }
+
+    Boolean delete(String id) {
+        EmployeeAddress employeeAddress = read(id);
+        return ea_db.remove(employeeAddress);
+    }
+
+    List<EmployeeAddress> readAll() {
+        return ea_db;
     }
 }

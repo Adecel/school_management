@@ -1,52 +1,57 @@
 package za.ac.cput.school_management.repository.lookup.impl;
 
 
-import za.ac.cput.school_management.domain.employee.EmployeeAddress;
+import za.ac.cput.school_management.domain.lookup.City;
 import za.ac.cput.school_management.domain.lookup.Country;
-import za.ac.cput.school_management.repository.lookup.CountryRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 
-public class CountryRepositoryImpl implements CountryRepository{
+public class CountryRepositoryImpl {
 
-    private final List<Country> CountryList;
-    private static za.ac.cput.school_management.repository.lookup.impl.CountryRepositoryImpl COUNTRY_REPOSITORY;
-    private CountryRepositoryImpl(){
-        this.CountryList = new ArrayList<>();
+    private List<Country> countrydb = new ArrayList<>();
+    //private CountryRepository db;
+    private static CountryRepositoryImpl countryRepository = null;
+
+    private CountryRepositoryImpl() {
     }
 
-
-
-    @Override
-    public Country save(Country country) {
-        Optional<Country> read = read(country.getId());
-        if (read.isPresent()){
-            delete(read.get());
+    public static CountryRepositoryImpl getCountryRepository() {
+        if (countryRepository == null) {
+            countryRepository = new CountryRepositoryImpl();
         }
-        this.CountryList.add(country);
-        return country;
+        return countryRepository;
     }
 
-    @Override
-    public Optional<Country> read(String id) {
-        return  this.CountryList.stream().filter(g -> g.getId().equalsIgnoreCase(id))
-                .findFirst();
+    Country create(Country country) {
+        boolean result = countrydb.add(country);
+        if (result) {
+            return country;
+        }
+        return null;
     }
 
-    @Override
-    public void delete(Country country) {
-        this.CountryList.remove(country);
-
+    Country update(Country country) {
+        Country result = read(country.getId());
+        if (result != null) {
+            countrydb.remove(result);
+            countrydb.add(country);
+            return country;
+        }
+        return null;
     }
 
-    @Override
-    public List<Country> findById(String id) {
-        return this.CountryList.stream()
-                .filter(g -> g.getId().equalsIgnoreCase(id))
-                .collect(Collectors.toList());
+    Country read(String id) {
+        return countrydb.stream().filter(s -> s.getId().equals(id)).findAny().orElse(null);
+    }
+
+    Boolean delete(String id) {
+        Country country = read(id);
+        return countrydb.remove(country);
+    }
+
+    List<Country> readAll() {
+        return countrydb;
     }
 }
