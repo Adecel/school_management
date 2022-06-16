@@ -2,8 +2,10 @@ package za.ac.cput.school_management.domain.lookup;
 
 import com.sun.istack.NotNull;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import java.util.Objects;
 /**
  * Hilary Cassidy Nguepi Nangmo
@@ -15,6 +17,7 @@ public class City
     @Id @NotNull
     private String id;
     private String name;
+    @Lob
     private Country country;
 
     private City(Builder builder) {
