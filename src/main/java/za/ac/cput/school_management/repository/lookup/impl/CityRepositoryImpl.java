@@ -7,7 +7,10 @@ import za.ac.cput.school_management.repository.lookup.CityRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @Repository
 public class CityRepositoryImpl {
     private List<City> db = new ArrayList<>();

@@ -5,6 +5,10 @@ import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @Entity
 public class City
 {

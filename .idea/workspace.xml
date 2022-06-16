@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="pushing the my controller codes, and the update version of the pom file including spring-boot">
+    <list default="true" id="c778c6b8-52a6-4705-b17e-2e84587e7d2e" name="Changes" comment="The first commit of the project, before collaboration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/controller/student/StudentAddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/controller/student/StudentAddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/controller/student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/controller/student/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/domain/lookup/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/CityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/factory/lookup/CityFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/factory/lookup/CityFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/school_management/repository/lookup/impl/CityRepositoryImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +42,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="master" />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -54,18 +51,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
-  }
-}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -78,46 +63,82 @@
       <recent name="za.ac.cput.school_management.factory.employee" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SchoolManagementSystem">
-    <configuration name="SchoolManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.SchoolManagementSystem" />
+  <component name="RunManager" selected="JUnit.CityRepositoryImplTest.readAll">
+    <configuration name="CityRepositoryImplTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentAddressFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CityRepositoryImplTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.factory.student.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.student" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.student.StudentAddressFactoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentAddressFactoryTest.buildWithSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CityRepositoryImplTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="school_management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.ac.cput.school_management.factory.student.*" />
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.factory.student" />
-      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.factory.student.StudentAddressFactoryTest" />
-      <option name="METHOD_NAME" value="buildWithSuccess" />
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="METHOD_NAME" value="read" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CityRepositoryImplTest.readAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="METHOD_NAME" value="readAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CityRepositoryImplTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="school_management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.ac.cput.school_management.repository.lookup.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.ac.cput.school_management.repository.lookup.impl" />
+      <option name="MAIN_CLASS_NAME" value="za.ac.cput.school_management.repository.lookup.impl.CityRepositoryImplTest" />
+      <option name="METHOD_NAME" value="update" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SchoolManagementSystem" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest.buildWithSuccess" />
-        <item itemvalue="JUnit.StudentAddressFactoryTest" />
+        <item itemvalue="JUnit.CityRepositoryImplTest.readAll" />
+        <item itemvalue="JUnit.CityRepositoryImplTest.delete" />
+        <item itemvalue="JUnit.CityRepositoryImplTest.read" />
+        <item itemvalue="JUnit.CityRepositoryImplTest.update" />
+        <item itemvalue="JUnit.CityRepositoryImplTest.create" />
       </list>
     </recent_temporary>
   </component>

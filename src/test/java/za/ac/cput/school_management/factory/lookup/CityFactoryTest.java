@@ -8,7 +8,8 @@ import za.ac.cput.school_management.domain.lookup.Country;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
  */
 class CityFactoryTest
 {

@@ -11,7 +11,10 @@ import za.ac.cput.school_management.factory.lookup.CityFactory;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 class CityRepositoryImplTest {
     CityRepositoryImpl cityRepository= CityRepositoryImpl.getCityRepo();
 

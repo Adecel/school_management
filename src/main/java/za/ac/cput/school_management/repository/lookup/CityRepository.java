@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.lookup.City;
 
 import java.util.List;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 
 public interface CityRepository extends JpaRepository<City,String> {
 
