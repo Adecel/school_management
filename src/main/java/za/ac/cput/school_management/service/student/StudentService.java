@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface StudentService extends IService<Student, String> {
     List<Student> findByStudentId(String studentId);
+    void deleteById(String studentId);
 }
