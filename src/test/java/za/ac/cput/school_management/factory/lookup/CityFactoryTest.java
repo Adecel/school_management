@@ -13,10 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class CityFactoryTest
 {
-    City city;
+    City city = CityFactory.getCity("12344","Yaounde",null);
     @Test
     void getCity() {
-        city = CityFactory.getCity("12344","Yaounde",new Country());
         assertNotNull(city);
         System.out.println(city);
     }
