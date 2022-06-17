@@ -1,5 +1,10 @@
 package za.ac.cput.school_management.service.lookup.impl;
 
+/*
+ * Author : Mogamad Tawfeeq Cupido
+ * Student Number : 216266882
+ *(Term 2 Exam)
+ * */
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.lookup.Country;
@@ -28,7 +33,7 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Optional<Country> read(String id) {
-        return this.repository.read(id);
+        return this.repository.findById(id);
     }
 
     @Override
@@ -38,13 +43,14 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public List<Country> findById(String id) {
+    public Optional<Country> findById(String id) {
         return this.repository.findById(id);
     }
 
     @Override
-    public void deleteById(String id) {
+    public List<Country> deleteById(String id) {
         Optional<Country> country = read(id);
         if (country.isPresent()) delete(country.get());
+        return null;
     }
 }
