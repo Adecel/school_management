@@ -5,13 +5,17 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.school_management.domain.lookup.City;
 import za.ac.cput.school_management.domain.lookup.Country;
 import za.ac.cput.school_management.factory.lookup.CityFactory;
+import za.ac.cput.school_management.factory.lookup.CountryFactory;
+import za.ac.cput.school_management.repository.lookup.CountryRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 /**
@@ -22,17 +26,26 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CityServiceImplTest {
+    @Autowired
 private CityServiceImpl cityService;
-    @Order(1)
-    @Test
-    void getCityService() {
-        cityService = CityServiceImpl.getCityService();
-    }
+    @Autowired
+    private CountryRepository countryRepository;
+//    @Order(1)
+//    @Test
+//    void getCityService() {
+//        cityService = CityServiceImpl.getCityService();
+//    }
 
     @Order(2)
     @Test
-    void save() {
-        City city = cityService.save(CityFactory.getCity("1234","Pretoria",new Country()));
+    void save() throws Exception {
+        Country country = CountryFactory.getCountry("0001","South Africa");
+        Country savedCountry = countryRepository.save(country);
+        System.out.println("savedCountry");
+        System.out.println(savedCountry);
+        City mycity = CityFactory.getCity("1234","Pretoria",savedCountry);
+        System.out.println(mycity);
+        City city = cityService.save(mycity);
         assertNotNull(city);
     }
 
@@ -40,23 +53,27 @@ private CityServiceImpl cityService;
     @Test
     void read() {
         City city = cityService.read("1234").get();
+        System.out.println(city);
         assertNotNull(city);
     }
-
+    @Order(4)
     @Test
-    void delete() {
-        City cityObject = CityFactory.getCity("1234","Pretoria",new Country());
+    void update() throws Exception {
+        Country country = CountryFactory.getCountry("0001","South Africa");
+        City city = cityService.update(CityFactory.getCity("1234","Pretoria",country));
+        assertNotNull(city);
+    }
+    @Order(5)
+    @Test
+    void delete() throws Exception {
+        Country country = CountryFactory.getCountry("0001","South Africa");
+        City cityObject = CityFactory.getCity("1234","Pretoria",country);
         cityService.delete(cityObject);
-        City city = cityService.read("1234").get();
-        assertNotSame(city,cityObject);
+        City city = cityService.read("1234").orElse(null);
+        assertNull(city);
     }
 
-    @Test
-    void update() {
-        City city = cityService.update(CityFactory.getCity("1234","Pretoria",new Country()));
-        assertNotNull(city);
-    }
-
+    @Order(6)
     @Test
     void readAll() {
         List<City> cities = cityService.readAll();

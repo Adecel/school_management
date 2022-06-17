@@ -8,7 +8,8 @@ import za.ac.cput.school_management.domain.lookup.Country;
  */
 public class CityFactory
 {
-    public static City getCity(String id, String name, Country country){
-        return new City.Builder(id).buildName(name).build();
+    public static City getCity(String id, String name, Country country) throws Exception {
+        if(id.equals("")||name.equals(""))   throw new Exception("IllegalArgumentException");
+        return new City.Builder(id).buildName(name).buildCountry(country).build();
     }
 }

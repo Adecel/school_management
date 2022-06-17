@@ -1,5 +1,6 @@
 package za.ac.cput.school_management.service.lookup.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.lookup.City;
 import za.ac.cput.school_management.repository.lookup.CityRepository;
@@ -11,6 +12,7 @@ import java.util.Optional;
 @Service
 public class CityServiceImpl implements CityService {
     private static CityServiceImpl cityService = null;
+    @Autowired
     private CityRepository repository;
 
     private CityServiceImpl() {
