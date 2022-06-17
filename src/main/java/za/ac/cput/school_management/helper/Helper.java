@@ -1,10 +1,15 @@
 package za.ac.cput.school_management.helper;
+
+/*
+ * @author Adecel Rusty Mabiala
+ * @StudentNumber 219197229
+ */
+
 import org.apache.commons.lang3.StringUtils;
 
 public class Helper {
 
     public static boolean isEmptyOrNull(String str) {
-
         return StringUtils.isEmpty(str);
     }
 

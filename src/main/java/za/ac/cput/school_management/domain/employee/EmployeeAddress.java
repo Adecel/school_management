@@ -8,46 +8,50 @@ package za.ac.cput.school_management.domain.employee;
 
 import za.ac.cput.school_management.domain.lookup.Address;
 import com.sun.istack.NotNull;
+
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
 @Entity
 public class EmployeeAddress {
     @Id @NotNull
-	private String staffId;
-	private Address address;
+    private String staffId;
+    @Embedded private Address address;
 
+    public EmployeeAddress() {
+    }
 
-private EmployeeAddress(Builder builder){
-    this.staffId = builder.staffId;
-	this.address = builder.address;
+    private EmployeeAddress(Builder builder){
+        this.staffId = builder.staffId;
+        this.address = builder.address;
 
-}
+    }
 
- public String getStaffId() {
+    public String getStaffId() {
         return staffId;
     }
 
- public Address getAddress() {
+    public Address getAddress() {
         return address;
     }
 
+
+    //**Adecel: don't use this (i already add a notation)**
  /*public void setStaffId(String staffId) {
         this.staffId = staffId;
     }
-
 public void setAddress(Address address) {
         this.address = address;
     }*/
 
-@Override
+    @Override
     public String toString() {
         return "EmployeeAddress{" +
                 "staffId='" + staffId + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,17 +59,16 @@ public void setAddress(Address address) {
         EmployeeAddress that = (EmployeeAddress) o;
         return staffId.equals(that.staffId) && address.equals(that.address);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(staffId, address);
     }
 
-        //Builder
+    //Builder
     public static class Builder {
         private String staffId;
         private Address address;
-      
+
         //Builder setters
 
         public Builder StaffId(String staffId) {
@@ -78,10 +81,10 @@ public void setAddress(Address address) {
             return this;
         }
 
-         public EmployeeAddress.Builder copy(EmployeeAddress employeeAddress) {
+        public EmployeeAddress.Builder copy(EmployeeAddress employeeAddress) {
             this.staffId = employeeAddress.staffId;
             this.address = employeeAddress.address;
-           
+
             return this;
         }
 

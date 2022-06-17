@@ -1,4 +1,8 @@
 package za.ac.cput.school_management.factory.student;
+/*
+ * @author Adecel Rusty Mabiala
+ * @StudentNumber 219197229
+ */
 
 import za.ac.cput.school_management.domain.student.StudentAddress;
 import za.ac.cput.school_management.domain.lookup.Address;
@@ -10,8 +14,9 @@ public class StudentAddressFactory {
 //        Helper.checkStringParam("studentId", studentId);
 //        Helper.checkStringParam("address", String.valueOf(address));
 
-        if (Helper.isEmptyOrNull(studentId) || Helper.isEmptyOrNull(String.valueOf(address)))
-            throw new IllegalArgumentException("studentId and/or address");
+        Helper.checkStringParam("Student ID is required", studentId);
+        if(String.valueOf(address).isEmpty())
+            throw new IllegalArgumentException("address can not be empty");
 
         return new StudentAddress.Builder().StudentId(studentId).Address(address).build();
     }

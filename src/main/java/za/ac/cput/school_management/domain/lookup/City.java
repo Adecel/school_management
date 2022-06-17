@@ -2,23 +2,24 @@ package za.ac.cput.school_management.domain.lookup;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Convert;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import java.util.Objects;
-/**
- * Hilary Cassidy Nguepi Nangmo
- * 220346887
- */
+
+//don't modify the class anymore, from here every thing is working till to the controller
 @Entity
 public class City
 {
     @Id @NotNull
     private String id;
+    @Column(insertable = false, updatable = false)  //I have add this dont remote we gona use it the controller
     private String name;
-    @Lob
-    private Country country;
+    @Embedded private Country country;
+
+    public City() {
+    }
 
     private City(Builder builder) {
         this.id = builder.id;

@@ -6,14 +6,12 @@ package za.ac.cput.school_management.factory.lookup;
  *(Term 2 Exam)
  * */
 
-
-
 import za.ac.cput.school_management.domain.lookup.Country;
 
 
 public class CountryFactory {
 
-        public static Country getCountry(String id, String name){
+    public static Country getCountry(String id, String name){
         return new Country.Builder(id).Name(name).build();
     }
 }

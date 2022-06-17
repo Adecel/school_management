@@ -1,7 +1,11 @@
 package za.ac.cput.school_management.domain.student;
-
+/*
+ * @author Adecel Rusty Mabiala
+ * @StudentNumber 219197229
+ */
 import za.ac.cput.school_management.domain.lookup.Name;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -9,12 +13,10 @@ import java.util.Objects;
 
 @Entity
 public class Student {
-    @NotNull @Id
-    private String studentId;
-    @NotNull
-    private String email;
-    @NotNull
-    private Name name;
+
+    @NotNull @Id private String studentId;
+    @NotNull private String email;
+    @Embedded @NotNull private Name name;
 
     protected Student() {
     }

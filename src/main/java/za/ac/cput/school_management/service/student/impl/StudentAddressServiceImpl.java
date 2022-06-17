@@ -1,8 +1,12 @@
 package za.ac.cput.school_management.service.student.impl;
+/*
+ * @author Adecel Rusty Mabiala
+ * @StudentNumber 219197229
+ */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.student.StudentAddress;
-import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import za.ac.cput.school_management.repository.student.StudentAddressRepository;
 //import za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentAddressService;
@@ -13,11 +17,13 @@ import java.util.Optional;
 @Service
 public class StudentAddressServiceImpl implements StudentAddressService {
     private final StudentAddressRepository repository;
+
+    @Autowired
     public StudentAddressServiceImpl(StudentAddressRepository repository) {
         this.repository = repository;
     }
 
-//    private static StudentAddressService SERVICE;
+    //    private static StudentAddressService SERVICE;
 //
 //    private StudentAddressServiceImpl(){
 //        this.repository = StudentAddressRepositoryImpl.studentAddressRepository();

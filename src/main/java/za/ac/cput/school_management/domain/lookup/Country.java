@@ -6,24 +6,32 @@ package za.ac.cput.school_management.domain.lookup;
  *(Term 2 Exam)
  * */
 
+
+
 import com.sun.istack.NotNull;
+
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
 
+//don't modify the class anymore, from here every thing is working till to the controller
 
-    public class Country {
+//I have add the annotation, we gonna need the for the project to run
+@Entity
+@Embeddable
+public class Country {
 
-    @Id @NotNull  
-	private String id;
-	private String name;
+    @Id @NotNull
+    private String id;
+    private String name;
 
 
-	public Country(Builder builder){
-    this.id = builder.id;
-	this.name = builder.name;
+    public Country(Builder builder){
+        this.id = builder.id;
+        this.name = builder.name;
 
-}
+    }
 
     public Country() {
 
@@ -58,13 +66,13 @@ import java.util.Objects;
                 ", name='" + name + '\'' +
                 '}';
     }
-       //Builder
+    //Builder
     public static class Builder {
         private String id;
         private String name;
 
 
-           //Builder setters
+        //Builder setters
 
         public Builder  (String id) {
             this.id = id;
@@ -82,5 +90,5 @@ import java.util.Objects;
             return new Country(this);
         }
 
-       }
+    }
 }
