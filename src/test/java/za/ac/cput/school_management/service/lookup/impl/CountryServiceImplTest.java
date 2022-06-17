@@ -1,5 +1,11 @@
 package za.ac.cput.school_management.service.lookup.impl;
 
+/*
+ * Author : Mogamad Tawfeeq Cupido
+ * Student Number : 216266882
+ *(Term 2 Exam)
+ * */
+
 import org.junit.jupiter.api.Test;
 
 

@@ -1,5 +1,11 @@
 package za.ac.cput.school_management.repository.employee;
 
+/*
+ * Author : Mogamad Tawfeeq Cupido
+ * Student Number : 216266882
+ *(Term 2 Exam)
+ * */
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;

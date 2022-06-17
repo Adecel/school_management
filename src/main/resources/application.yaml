@@ -10,4 +10,4 @@ Spring:
   datasource:
     url: jdbc:mysql://localhost:3306/schoolManagement-db?createDatabaseIfNotExist=true
     username: root
-    password: Mabi@2021
+    password:
