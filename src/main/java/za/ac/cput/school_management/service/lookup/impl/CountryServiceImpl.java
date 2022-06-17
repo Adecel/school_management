@@ -12,6 +12,7 @@ import za.ac.cput.school_management.factory.lookup.CountryFactory;
 import za.ac.cput.school_management.repository.lookup.CountryRepository;
 import za.ac.cput.school_management.service.lookup.CountryService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -47,9 +48,12 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public List<Country> deleteById(String id) {
+    public void deleteById(String id) {
         Optional<Country> country = read(id);
-        if (country.isPresent()) delete(country.get());
-        return null;
+        if (country.isPresent()) {
+            delete(country.get());
+        }
+
     }
+
 }
