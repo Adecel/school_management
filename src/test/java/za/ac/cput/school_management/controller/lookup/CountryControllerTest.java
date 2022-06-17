@@ -1,5 +1,4 @@
-package za.ac.cput.school_management.controller.employee;
-
+package za.ac.cput.school_management.controller.lookup;
 /*
  * Author : Mogamad Tawfeeq Cupido
  * Student Number : 216266882
@@ -10,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EmployeeAddressControllerTest {
+class CountryControllerTest {
 
     @Test
     void save() {
@@ -25,6 +24,6 @@ class EmployeeAddressControllerTest {
     }
 
     @Test
-    void findByStaffId() {
+    void findById() {
     }
 }

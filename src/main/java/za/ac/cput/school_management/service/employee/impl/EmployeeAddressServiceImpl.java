@@ -1,5 +1,11 @@
 package za.ac.cput.school_management.service.employee.impl;
 
+/*
+ * Author : Mogamad Tawfeeq Cupido
+ * Student Number : 216266882
+ *(Term 2 Exam)
+ * */
+
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
@@ -35,14 +41,25 @@ public class EmployeeAddressServiceImpl implements EmployeeAddressService {
         this.repository.delete(employeeAddress);
     }
 
+
     @Override
     public List<EmployeeAddress> findByStaffId(String staffId) {
         return this.repository.findByStaffId(staffId);
     }
 
     @Override
-    public void deleteById(String staffId) {
+    public List<EmployeeAddress> deleteById(String staffId) {
         Optional<EmployeeAddress> employeeAddress = read(staffId);
         if (employeeAddress.isPresent()) delete(employeeAddress.get());
+        return null;
     }
+
+    @Override
+    public List<EmployeeAddress> deleteByStaffId(String staffId) {
+        Optional<EmployeeAddress> employeeAddress = read(staffId);
+        if (employeeAddress.isPresent()) delete(employeeAddress.get());
+        return null;
+    }
+
+
 }
