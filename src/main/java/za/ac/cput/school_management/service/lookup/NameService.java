@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface NameService extends IService<Name, String> {
 
-    Optional<List<Name>> read(List<Name> name);
+//    Optional<List<Name>> read(List<Name> name);
 }
 

@@ -23,27 +23,26 @@ public class NameServiceImpl implements NameService {
     public Name save(Name name) {return this.repository.save(name);}
 
     @Override
-    public Optional<Name> read(String s) {
-        return this.repository.read(s);
+    public Optional<Name> read(String s) {return this.repository.read(s);
     }
 
 
-    @Override
-    public Optional<List<Name>> read(List<Name> name) {
-        List<Name> results = this.nameList.stream()
-                .map(n -> {
-                    if (n.equals(name.get(0))) {
-                        return n;
-                    } else {
-                        return null;
-                    }
-                })
-                .filter(n -> n != null)
-                .toList();
-
-
-        return Optional.of(results);
-    }
+//    @Override
+//    public Optional<List<Name>> read(List<Name> name) {
+//        List<Name> results = this.nameList.stream()
+//                .map(n -> {
+//                    if (n.equals(name.get(0))) {
+//                        return n;
+//                    } else {
+//                        return null;
+//                    }
+//                })
+//                .filter(n -> n != null)
+//                .toList();
+//
+//
+//        return Optional.of(results);
+//    }
 
     @Override
     public void delete(Name name) {this.repository.delete(name);}}
