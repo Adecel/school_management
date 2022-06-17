@@ -1,15 +1,40 @@
 package za.ac.cput.school_management.domain.lookup;
 //Dieuci Djate Nsibu 220169136
 
+import javax.persistence.Embeddable;
 import java.util.Objects;
 
+
+//don't modify the class anymore, from here every thing is working till to the controller
+@Embeddable
 public class Name {
-    private final String firstName, middleName, lastName;
+    private String firstName, middleName, lastName;
+
+    public Name() {
+    }
+
+    public Name(String firstName, String middleName, String lastName) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+    }
 
     private Name(Builder builder) {
         this.firstName = builder.firstName;
         this.middleName = builder.middleName;
         this.lastName = builder.lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {

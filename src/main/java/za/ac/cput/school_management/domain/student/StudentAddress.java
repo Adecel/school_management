@@ -1,8 +1,12 @@
 package za.ac.cput.school_management.domain.student;
+/*
+ * @author Adecel Rusty Mabiala
+ * @StudentNumber 219197229
+ */
 
-import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.school_management.domain.lookup.Address;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -12,7 +16,7 @@ import java.util.Objects;
 public class StudentAddress {
 
     @NotNull @Id private String studentId;
-    @NotNull private Address address;
+    @Embedded @NotNull private Address address;
 
     protected StudentAddress() {
     }
