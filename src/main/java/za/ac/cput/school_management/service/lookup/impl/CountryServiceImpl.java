@@ -12,7 +12,6 @@ import za.ac.cput.school_management.factory.lookup.CountryFactory;
 import za.ac.cput.school_management.repository.lookup.CountryRepository;
 import za.ac.cput.school_management.service.lookup.CountryService;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
