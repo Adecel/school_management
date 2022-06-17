@@ -6,9 +6,12 @@ import za.ac.cput.school_management.domain.lookup.Name;
 //import za.ac.cput.school_management.repository.IRepository;
 
 import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface NameRepository extends JpaRepository< Name, String> {
-    List<Name> getAll();
+    Optional<List<Name>> read(List<Name> name);
+    Optional<Name> read(String s);
 }
 
 
