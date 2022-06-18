@@ -11,56 +11,38 @@ import za.ac.cput.school_management.service.lookup.impl.CityServiceImpl;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @RestController
 @RequestMapping("/city/")
 public class CityController {
-
-    private CityServiceImpl cityService;
     @Autowired
-    public CityController(CityServiceImpl cityService) {
-        this.cityService = cityService;
+    private CityServiceImpl service;
+
+    @PostMapping("create")
+    public City save(@RequestBody City a) {
+        return service.save(a);
     }
 
-    @GetMapping("/getall")
-    public ResponseEntity<List<City>> getAll(){
-        List<City> listCity = this.cityService.findAll();
-        return ResponseEntity.ok(listCity);
+    @GetMapping("read")
+    public Optional<City> read(@RequestParam("id") String id) {
+        return Optional.empty();
     }
 
-    @GetMapping("/read/{cityID}")
-    public ResponseEntity<Optional<City>> read(@PathVariable String cityID){
-        log.info("Read request: {}",cityID);
-
-        try{
-            Optional<City> readCity = cityService.read(cityID);
-            return ResponseEntity.ok(readCity);
-
-        }catch(IllegalArgumentException e){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
-        }
+    @GetMapping("delete")
+    public void delete(@RequestParam("id") City a) {
+        service.delete(a);
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<City> save(@Valid @RequestBody City saveCity){
-        log.info("Save request: {}",saveCity);
-
-        try{
-            City cityTemp = cityService.save(saveCity);
-            return ResponseEntity.ok(cityTemp);
-
-        }catch(IllegalArgumentException e){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
-        }
+    @PostMapping("update")
+    public City update(@RequestBody City city) {
+        return service.update(city);
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<City> delete(@PathVariable City city){
-        log.info("Delete request: {}",city);
-
-        this.cityService.delete(city);
-        return ResponseEntity.noContent().build();
+    @GetMapping("reads")
+    public List<City> readAll() {
+        return service.readAll();
     }
-
-
 }
