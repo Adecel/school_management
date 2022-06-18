@@ -10,8 +10,6 @@ package za.ac.cput.school_management.factory.employee;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
 import za.ac.cput.school_management.domain.lookup.Address;
 
-import za.ac.cput.school_management.helper.Helper;
-
 
 public class EmployeeAddressFactory {
 

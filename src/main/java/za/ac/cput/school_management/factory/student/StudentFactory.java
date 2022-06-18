@@ -6,7 +6,6 @@ package za.ac.cput.school_management.factory.student;
 
 import za.ac.cput.school_management.domain.student.Student;
 import za.ac.cput.school_management.domain.lookup.Name;
-import za.ac.cput.school_management.helper.Helper;
 
 public class StudentFactory {
 
