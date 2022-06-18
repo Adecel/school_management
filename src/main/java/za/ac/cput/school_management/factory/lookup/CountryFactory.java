@@ -11,7 +11,10 @@ import za.ac.cput.school_management.domain.lookup.Country;
 
 public class CountryFactory {
 
-    public static Country getCountry(String id, String name){
-        return new Country.Builder(id).Name(name).build();
+    public static Country getCountry(String id, String name) throws Exception {
+        if (id.equals("") || name.equals("")) throw new Exception("IllegalArgumentException");
+        {
+            return new Country.Builder(id).Name(name).build();
+        }
     }
 }

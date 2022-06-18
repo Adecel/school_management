@@ -10,7 +10,7 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -21,10 +21,12 @@ import za.ac.cput.school_management.repository.lookup.CountryRepository;
 import java.util.List;
 import java.util.Optional;
 
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(SpringRunner.class)
+//import static junit.framework.TestCase.assertNotNull;
+//import static junit.framework.TestCase.assertNull;
+
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CountryServiceImplTest {
@@ -52,7 +54,7 @@ class CountryServiceImplTest {
     }
     @Order(3)
     @Test
-    void delete() {
+    void delete() throws Exception {
         Country country = CountryFactory.getCountry("0222","America");
         Country country1 = CountryFactory.getCountry("0222","America");
         countryService.delete(country1);
@@ -61,7 +63,7 @@ class CountryServiceImplTest {
     }
     @Order(4)
     @Test
-    void findById() {
+    void findById() throws Exception {
         Country country = CountryFactory.getCountry("0222","America");
 
         Optional<Country> countryList = countryService.findById("0222");
@@ -69,9 +71,15 @@ class CountryServiceImplTest {
     }
     @Order(5)
     @Test
-    void deleteById() {
+    void deleteById() throws Exception {
         Country country = CountryFactory.getCountry("0222","America");
-        List<Country> countryList = countryService.deleteById("0222");
+
+        Optional<Country> countryList = countryService.deleteById("0222");
         assertNull(countryList);
+
+         countryService.deleteById("0222");
+        Country country1 = countryService.read("0222").get();
+        assertNull(country1);
+
     }
 }

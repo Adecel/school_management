@@ -17,12 +17,11 @@ import za.ac.cput.school_management.service.employee.EmployeeAddressService;
 
 import javax.validation.Valid;
 import java.util.List;
-
-@RestController
-    @RequestMapping("employee/address/")
     @Slf4j
-//the full address is : http://localhost:8080/employee/employee-address/save
-//the full address is : http://localhost:8080/employee/employee-address/read/staffId
+    @RestController
+    @RequestMapping("employee/address/")
+
+
     public class EmployeeAddressController {
 
         private final EmployeeAddressService employeeAddressService;
@@ -33,7 +32,7 @@ import java.util.List;
         }
 
         @PostMapping("save")
-        public ResponseEntity<EmployeeAddress> save(@Valid @RequestBody EmployeeAddress employeeAddress) {
+        public ResponseEntity<EmployeeAddress> save(@Valid @RequestBody EmployeeAddress employeeAddress) throws Exception {
 
             EmployeeAddress save = employeeAddressService.save(employeeAddress);
             return ResponseEntity.ok(save);

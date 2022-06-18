@@ -9,6 +9,7 @@ package za.ac.cput.school_management.service.employee.impl;
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
+import za.ac.cput.school_management.domain.lookup.Address;
 import za.ac.cput.school_management.factory.employee.EmployeeAddressFactory;
 import za.ac.cput.school_management.repository.employee.EmployeeAddressRepository;
 import za.ac.cput.school_management.service.employee.EmployeeAddressService;
@@ -48,18 +49,19 @@ public class EmployeeAddressServiceImpl implements EmployeeAddressService {
     }
 
     @Override
-    public List<EmployeeAddress> deleteById(String staffId) {
-        Optional<EmployeeAddress> employeeAddress = read(staffId);
-        if (employeeAddress.isPresent()) delete(employeeAddress.get());
-        return null;
+    public List<EmployeeAddress> findByAddress(Address address) {
+        return this.repository.findAllByAddress(address);
     }
 
     @Override
-    public List<EmployeeAddress> deleteByStaffId(String staffId) {
+    public List<EmployeeAddress> deleteById(String staffId) {
         Optional<EmployeeAddress> employeeAddress = read(staffId);
         if (employeeAddress.isPresent()) delete(employeeAddress.get());
+
         return null;
     }
+
+
 
 
 }
