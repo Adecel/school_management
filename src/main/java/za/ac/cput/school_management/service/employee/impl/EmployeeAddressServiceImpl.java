@@ -57,15 +57,11 @@ public class EmployeeAddressServiceImpl implements EmployeeAddressService {
     public List<EmployeeAddress> deleteById(String staffId) {
         Optional<EmployeeAddress> employeeAddress = read(staffId);
         if (employeeAddress.isPresent()) delete(employeeAddress.get());
+
         return null;
     }
 
-    @Override
-    public List<EmployeeAddress> deleteByStaffId(String staffId) {
-        Optional<EmployeeAddress> employeeAddress = read(staffId);
-        if (employeeAddress.isPresent()) delete(employeeAddress.get());
-        return null;
-    }
+
 
 
 }
