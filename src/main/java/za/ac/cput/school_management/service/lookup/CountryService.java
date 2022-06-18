@@ -15,6 +15,6 @@ public interface CountryService extends IService<Country, String> {
 
     Optional<Country> findById(String id);
 
-    void deleteById(String id);
+    Optional<Country> deleteById(String id);
 
 }

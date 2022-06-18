@@ -7,6 +7,7 @@ package za.ac.cput.school_management.service.employee.impl;
  * */
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
 import za.ac.cput.school_management.domain.lookup.Address;
@@ -20,7 +21,7 @@ import java.util.Optional;
 
 @Service
 public class EmployeeAddressServiceImpl implements EmployeeAddressService {
-
+    @Autowired
     private final EmployeeAddressRepository repository;
     public EmployeeAddressServiceImpl(EmployeeAddressRepository repository) {
         this.repository = repository;
@@ -61,7 +62,13 @@ public class EmployeeAddressServiceImpl implements EmployeeAddressService {
         return null;
     }
 
+    @Override
+    public List<EmployeeAddress> deleteByStaffId(String staffId) {
+        Optional<EmployeeAddress> employeeAddress = read(staffId);
+        if (employeeAddress.isPresent()) delete(employeeAddress.get());
 
+        return null;
+    }
 
 
 }

@@ -68,8 +68,9 @@ public class CityServiceImpl implements CityService {
         for(Address address:addresses){
             List<EmployeeAddress> employeeAddresses = employeeAddressService.findByAddress(address);
             for(EmployeeAddress employeeAddress: employeeAddresses){
-                Employee employee = employeeService.
+                /*Employee employee = employeeService.;*/
             }
         }
+        return null;
     }
 }
