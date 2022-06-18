@@ -7,7 +7,10 @@ import za.ac.cput.school_management.service.lookup.impl.CityServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @RestController
 @RequestMapping("/city/")
 public class CityController {

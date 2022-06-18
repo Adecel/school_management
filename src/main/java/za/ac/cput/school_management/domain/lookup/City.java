@@ -4,7 +4,10 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.util.Objects;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 //don't modify the class anymore, from here every thing is working till to the controller
 @Entity
 public class City

@@ -15,7 +15,10 @@ import za.ac.cput.school_management.service.lookup.CityService;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @Service
 public class CityServiceImpl implements CityService {
     private static CityServiceImpl cityService = null;
@@ -68,7 +71,12 @@ public class CityServiceImpl implements CityService {
         for(Address address:addresses){
             List<EmployeeAddress> employeeAddresses = employeeAddressService.findByAddress(address);
             for(EmployeeAddress employeeAddress: employeeAddresses){
-                Employee employee = employeeService.
+                Employee employee = employeeService.equals( e.getEmail() )
+                        return e;
+
+
+                }
+                return null;
             }
         }
     }
