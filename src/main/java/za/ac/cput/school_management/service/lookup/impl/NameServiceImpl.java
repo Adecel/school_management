@@ -1,4 +1,5 @@
 package za.ac.cput.school_management.service.lookup.impl;
+//220169136 Dieuci Djate Nsibu
 
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.lookup.Name;
@@ -26,23 +27,6 @@ public class NameServiceImpl implements NameService {
     public Optional<Name> read(String s) {return this.repository.read(s);
     }
 
-
-//    @Override
-//    public Optional<List<Name>> read(List<Name> name) {
-//        List<Name> results = this.nameList.stream()
-//                .map(n -> {
-//                    if (n.equals(name.get(0))) {
-//                        return n;
-//                    } else {
-//                        return null;
-//                    }
-//                })
-//                .filter(n -> n != null)
-//                .toList();
-//
-//
-//        return Optional.of(results);
-//    }
 
     @Override
     public void delete(Name name) {this.repository.delete(name);}}

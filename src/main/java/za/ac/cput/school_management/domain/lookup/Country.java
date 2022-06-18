@@ -15,80 +15,76 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
 
-//don't modify the class anymore, from here every thing is working till to the controller
+import com.sun.istack.NotNull;
 
-//I have add the annotation, we gonna need the for the project to run
-@Entity
-@Embeddable
+import java.util.Objects;
+
 public class Country {
+    @NotNull
+    private  String countryId;
+    private  String countryName;
 
-    @Id @NotNull
-    private String id;
-    private String name;
-
-
-    public Country(Builder builder){
-        this.id = builder.id;
-        this.name = builder.name;
-
+    protected Country() {
     }
 
-    public Country() {
-
+    public Country(Builder builder) {
+        this.countryId = builder.countryId;
+        this.countryName = builder.countryName;
     }
 
-    public String getId() {
-        return id;
+    public String getCountryId() {
+        return countryId;
     }
 
-    public String getName() {
-        return name;
+    public String getCountryName() {
+        return countryName;
     }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Country country = (Country) o;
-        return id.equals(country.id) && name.equals(country.name) ;
+        return Objects.equals(countryId, country.countryId) && Objects.equals(countryName, country.countryName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(countryId, countryName);
     }
 
     @Override
     public String toString() {
         return "Country{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "countryId='" + countryId + '\'' +
+                ", countryName='" + countryName + '\'' +
                 '}';
     }
-    //Builder
-    public static class Builder {
-        private String id;
-        private String name;
 
 
-        //Builder setters
 
-        public Builder  (String id) {
-            this.id = id;
+    public static class Builder{
+        private String countryId, countryName;
 
+        public Builder setCountryId(String countryId){
+            this.countryId = countryId;
+            return this;
         }
 
-        public Builder Name (String name) {
-            this.name = name;
+        public Builder setCountryName(String countryName){
+            this.countryName = countryName;
+            return this;
+        }
+
+        public Builder copy(Country country){
+            this.countryId = country.countryId;
+            this.countryName = country.countryName;
             return this;
 
         }
 
-
-        public Country build() {
+        public Country build(){
             return new Country(this);
         }
-
     }
 }

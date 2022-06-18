@@ -18,66 +18,52 @@ import za.ac.cput.school_management.factory.employee.EmployeeAddressFactory;
 import za.ac.cput.school_management.repository.employee.EmployeeAddressRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 //import static junit.framework.TestCase.assertNotNull;
 //import static junit.framework.TestCase.assertNull;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 //@RunWith(SpringRunner.class)
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 class EmployeeAddressServiceImplTest {
 
     @Autowired
     private EmployeeAddressServiceImpl employeeAddressService;
+    EmployeeAddress employeeAddress= EmployeeAddressFactory.createEmployeeAddress("213345",
+            "234","003","12","WOOD",983,"PT4",
+            "MotherCity","+243","Afrique du sud");
 
-    @Autowired
-    private EmployeeAddressRepository employeeAddressRepository;
-
-    @Order(1)
     @Test
-    void save() throws Exception{
+    void a_save() {
+        EmployeeAddress temp= employeeAddressService.save(employeeAddress);
+        assertNotNull(temp);
+    }
+    @Test
+    void b_read() {
 
-        EmployeeAddress employeeAddress = EmployeeAddressFactory.build("25235",null);
-        EmployeeAddress savedEmployeeAddress = employeeAddressRepository.save(employeeAddress);
-        System.out.println("savedEmployeeAddress");
+        Optional<EmployeeAddress> temp= employeeAddressService.read("213345");
+        assertAll(  ()->assertTrue(temp.isPresent()),
+                ()-> assertNotNull(temp)
+        );
+        System.out.println(temp);
+
+    }  @Test
+    void d_delete() {
+        employeeAddressService.delete(employeeAddress);
+        List<EmployeeAddress> temp= employeeAddressService.findAll();
+        assertEquals(0,temp.size());
+
 
     }
 
-
-    @Order(2)
     @Test
-    void read() {
-        EmployeeAddress employeeAddress = employeeAddressService.read("25235").get();
-        System.out.println(employeeAddress);
-        assertNotNull(employeeAddress);
+    void c_findall() {
+        List<EmployeeAddress> temp= employeeAddressService.findAll();
+        System.out.println(temp.toString());
+        assertNotNull(temp);
     }
 
-
-    @Order(3)
-    @Test
-    void delete() {
-        EmployeeAddress employeeAddress = EmployeeAddressFactory.build("88888",null);
-        EmployeeAddress employeeAddressObject = EmployeeAddressFactory.build("88888",null);
-        employeeAddressService.delete(employeeAddressObject);
-        System.out.println(employeeAddress);
-        assertNotNull(employeeAddress);
-    }
-
-
-    @Order(4)
-    @Test
-    void findByStaffId() {
-        List<EmployeeAddress> employeeAddressList = employeeAddressService.findByStaffId("88888");
-        assertNull(employeeAddressList);
-    }
-
-    @Order(5)
-    @Test
-    void deleteById() {
-        List<EmployeeAddress> employeeAddressList = employeeAddressService.deleteById("88888");
-        assertNull(employeeAddressList);
-    }
 }

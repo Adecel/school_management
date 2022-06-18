@@ -9,6 +9,7 @@ package za.ac.cput.school_management.factory.employee;
 
 import za.ac.cput.school_management.domain.employee.EmployeeAddress;
 import za.ac.cput.school_management.domain.lookup.Address;
+import za.ac.cput.school_management.helper.Helper;
 
 
 public class EmployeeAddressFactory {
@@ -21,4 +22,7 @@ public class EmployeeAddressFactory {
 
         return new EmployeeAddress.Builder().StaffId(staffId).Address(address).build();
     }
+
+    public static EmployeeAddress createEmployeeAddress(String s, String s1, String s2, String s3, String wood, int i, String pt4, String motherCity, String s4, String afrique_du_sud) {
+      return null;}
 }

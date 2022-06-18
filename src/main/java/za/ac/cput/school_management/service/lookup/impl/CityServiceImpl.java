@@ -66,18 +66,4 @@ public class CityServiceImpl implements CityService {
         return repository.findAll();
     }
 
-//    public List<Name> getEmployeesInCity(String cityId){
-//        List<Address> addresses = addressService.readAllByCityId(cityId);
-//        for(Address address:addresses){
-//            List<EmployeeAddress> employeeAddresses = employeeAddressService.findByAddress(address);
-//            for(EmployeeAddress employeeAddress: employeeAddresses){
-//                Employee employee = employeeService.equals( e.getEmail() )
-//                        return e;
-//
-//
-//                }
-//                return null;
-//            }
-//        }
-//    }
 }

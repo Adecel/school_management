@@ -7,14 +7,18 @@ package za.ac.cput.school_management.factory.lookup;
  * */
 
 import za.ac.cput.school_management.domain.lookup.Country;
+import za.ac.cput.school_management.helper.Helper;
 
 
 public class CountryFactory {
 
-    public static Country getCountry(String id, String name) throws Exception {
-        if (id.equals("") || name.equals("")) throw new Exception("IllegalArgumentException");
-        {
-            return new Country.Builder(id).Name(name).build();
+
+            public static Country getCountry(String countryId, String countryName){
+
+
+                Helper.checkStringParam("countryId",countryId);
+                Helper.checkStringParam("countryName",countryName);
+                return  new Country.Builder().setCountryId(countryId).setCountryName(countryName).build();
+
+            }
         }
-    }
-}
