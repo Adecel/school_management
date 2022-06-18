@@ -16,9 +16,11 @@ import java.util.List;
 
 public interface EmployeeAddressService  extends IService<EmployeeAddress, String> {
 
-    List<EmployeeAddress> findByStaffId(String staffId);
+   
+
     List<EmployeeAddress> findByAddress(Address address);
     List<EmployeeAddress> deleteById(String staffId);
     List<EmployeeAddress> deleteByStaffId(String staffId);
+
 
 }

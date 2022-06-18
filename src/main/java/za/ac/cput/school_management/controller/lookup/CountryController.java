@@ -17,12 +17,11 @@ import za.ac.cput.school_management.service.lookup.CountryService;
 import javax.validation.Valid;
 import java.util.Optional;
 
-
-@RestController
+@Slf4j
+    @RestController
     @RequestMapping("lookup/country/")
-    @Slf4j
-//the full address is : http://localhost:8080/lookup/country/save
-//the full address is : http://localhost:8080/lookup/country/read/id
+
+
     public class CountryController {
 
         private final CountryService countryService;
@@ -33,7 +32,7 @@ import java.util.Optional;
         }
 
         @PostMapping("save")
-        public ResponseEntity<Country> save(@Valid @RequestBody Country country) {
+        public ResponseEntity<Country> save(@Valid @RequestBody Country country) throws Exception {
 
             Country save = countryService.save(country);
             return ResponseEntity.ok(save);

@@ -13,6 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class CountryFactoryTest {
     Country country = CountryFactory.getCountry("165654", "South Africa");
 
+    CountryFactoryTest() throws Exception {
+    }
+
     @Test
     void getCountry() {
         assertNotNull(country);

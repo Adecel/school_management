@@ -12,11 +12,10 @@ import za.ac.cput.school_management.factory.lookup.CountryFactory;
 import za.ac.cput.school_management.repository.lookup.CountryRepository;
 import za.ac.cput.school_management.service.lookup.CountryService;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CountryServiceImpl implements CountryService {
+public abstract class CountryServiceImpl implements CountryService {
 
     private final CountryRepository repository;
     public CountryServiceImpl(CountryRepository repository) {
@@ -26,7 +25,7 @@ public class CountryServiceImpl implements CountryService {
 
 
     @Override
-    public Country save(Country country) {
+    public Country save(Country country) throws Exception {
         Country obj = CountryFactory.getCountry(country.getId(), country.getName());
         return this.repository.save(country);
     }
@@ -48,12 +47,13 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public void deleteById(String id) {
+    public Optional<Country> deleteById(String id) {
         Optional<Country> country = read(id);
         if (country.isPresent()) {
             delete(country.get());
         }
 
+        return country;
     }
 
 }

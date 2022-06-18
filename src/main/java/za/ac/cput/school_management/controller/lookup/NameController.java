@@ -25,7 +25,7 @@ public class NameController {
     }
 
     @PostMapping("save Name")
-    public ResponseEntity<Name> save(@RequestBody Name name) {
+    public ResponseEntity<Name> save(@RequestBody Name name) throws Exception {
         log.info("Saving Name: {}", name);
         Name save = nameService.save(name);
         return ResponseEntity.ok(save);
