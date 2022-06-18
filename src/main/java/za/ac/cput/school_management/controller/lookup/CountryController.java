@@ -17,10 +17,10 @@ import za.ac.cput.school_management.service.lookup.CountryService;
 import javax.validation.Valid;
 import java.util.Optional;
 
-
+@Slf4j
     @RestController
     @RequestMapping("lookup/country/")
-    @Slf4j
+
 
     public class CountryController {
 

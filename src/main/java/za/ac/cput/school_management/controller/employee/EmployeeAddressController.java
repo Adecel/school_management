@@ -17,10 +17,10 @@ import za.ac.cput.school_management.service.employee.EmployeeAddressService;
 
 import javax.validation.Valid;
 import java.util.List;
-
-@RestController
-    @RequestMapping("employee/address/")
     @Slf4j
+    @RestController
+    @RequestMapping("employee/address/")
+
 
     public class EmployeeAddressController {
 
