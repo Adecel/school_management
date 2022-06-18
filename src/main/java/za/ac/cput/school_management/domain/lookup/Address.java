@@ -1,16 +1,11 @@
 package za.ac.cput.school_management.domain.lookup;
 
-/*
-student num : 219122822
-aurtor :   Mahad Hassan
-class :     Address
-* */
-import javax.persistence.*;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Objects;
 
-//don't modify the class anymore, from here every thing is working till to the controller
-@Embeddable
 public class Address {
+
     private String unitNumber;
     private String complexName;
     private String streetNumber;
@@ -200,5 +195,4 @@ public class Address {
             return new Address(this);
         }
     }
-
 }
