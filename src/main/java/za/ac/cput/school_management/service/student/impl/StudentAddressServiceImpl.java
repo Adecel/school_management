@@ -2,13 +2,17 @@ package za.ac.cput.school_management.service.student.impl;
 /*
  * @author Adecel Rusty Mabiala
  * @StudentNumber 219197229
+ * @Project Term-2
+ * @Group 31
+ * @Role Team Leader and Developer
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import za.ac.cput.school_management.domain.lookup.Address;
 import za.ac.cput.school_management.domain.student.StudentAddress;
+import za.ac.cput.school_management.factory.student.StudentAddressFactory;
 import za.ac.cput.school_management.repository.student.StudentAddressRepository;
-//import za.ac.cput.school_management.repository.student.impl.StudentAddressRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentAddressService;
 
 import java.util.List;
@@ -23,21 +27,14 @@ public class StudentAddressServiceImpl implements StudentAddressService {
         this.repository = repository;
     }
 
-    //    private static StudentAddressService SERVICE;
-//
-//    private StudentAddressServiceImpl(){
-//        this.repository = StudentAddressRepositoryImpl.studentAddressRepository();
-//    }
-//    public static StudentAddressService getService() {
-//        if (SERVICE == null)
-//            SERVICE = new StudentAddressServiceImpl();
-//        return SERVICE;
-//
-//    }
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
-//        StudentAddress obj = StudentAddressFactory.build(studentAddress.getStudentId(), studentAddress.getAddress());
-        return this.repository.save(studentAddress);
+        String studentId = studentAddress.getStudentId();
+        Address address = studentAddress.getAddress();
+
+        StudentAddress saved = StudentAddressFactory.build(studentId, address);
+        System.out.println("Saved" + saved);
+        return this.repository.save(saved);
     }
 
     @Override
@@ -59,6 +56,7 @@ public class StudentAddressServiceImpl implements StudentAddressService {
     @Override
     public void deleteById(String studentId) {
         Optional<StudentAddress> studentAddress = read(studentId);
-        if (studentAddress.isPresent()) delete(studentAddress.get());
+        if (studentAddress.isPresent())
+            delete(studentAddress.get());
     }
 }

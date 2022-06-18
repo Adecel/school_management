@@ -2,13 +2,16 @@ package za.ac.cput.school_management.service.student.impl;
 /*
  * @author Adecel Rusty Mabiala
  * @StudentNumber 219197229
+ * @Project Term-2
+ * @Group 31
+ * @Role Team Leader and Developer
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.student.Student;
+import za.ac.cput.school_management.factory.student.StudentFactory;
 import za.ac.cput.school_management.repository.student.StudentRepository;
-//import za.ac.cput.school_management.repository.student.impl.StudentRepositoryImpl;
 import za.ac.cput.school_management.service.student.StudentService;
 
 import java.util.List;
@@ -22,21 +25,14 @@ public class StudentServiceImpl implements StudentService {
     public StudentServiceImpl(StudentRepository repository) {
         this.repository = repository;
     }
-//    private static StudentService SERVICE;
-//
-//    private StudentServiceImpl(){
-//        this.repository = StudentRepositoryImpl.studentRepository();
-//    }
-//    public static StudentService getService(){
-//        if (SERVICE == null)
-//            SERVICE = new StudentServiceImpl();
-//        return SERVICE;
-//    }
 
     @Override
     public Student save(Student student) {
-//        Student obj = StudentFactory.build(student.getStudentId(), student.getEmail(), student.getName());
-        return this.repository.save(student);
+        Student saves = StudentFactory
+                .build(student.getStudentId(), student.getEmail(),
+                        student.getName());
+        System.out.println("Inserted" + saves);
+        return this.repository.save(saves);
     }
 
     @Override
@@ -50,6 +46,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> findAll() {
+        return this.repository.findAll();
+    }
+
+    @Override
     public List<Student> findByStudentId(String studentId) {
         return this.repository.findByStudentId(studentId);
     }
@@ -57,6 +58,13 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteById(String studentId) {
         Optional<Student> student = read(studentId);
-        if (student.isPresent()) delete(student.get());
+        if (student.isPresent())
+            delete(student.get());
     }
+
+    @Override
+    public Optional<Student> findByEmail(String email) {
+        return this.repository.findByEmail(email);
+    }
+
 }
