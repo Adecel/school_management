@@ -48,9 +48,12 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public List<Country> deleteById(String id) {
+    public void deleteById(String id) {
         Optional<Country> country = read(id);
-        if (country.isPresent()) delete(country.get());
-        return null;
+        if (country.isPresent()) {
+            delete(country.get());
+        }
+
     }
+
 }
