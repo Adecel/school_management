@@ -15,5 +15,5 @@ import java.util.Optional;
 public interface CountryService extends IService<Country, String> {
 
     Optional<Country> findById(String id);
-    List<Country> deleteById(String id);
+    void deleteById(String id);
 }

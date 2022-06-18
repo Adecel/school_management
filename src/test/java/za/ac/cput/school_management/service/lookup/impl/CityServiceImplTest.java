@@ -4,10 +4,8 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cput.school_management.domain.lookup.City;
 import za.ac.cput.school_management.domain.lookup.Country;
 import za.ac.cput.school_management.factory.lookup.CityFactory;
@@ -22,19 +20,15 @@ import static org.junit.jupiter.api.Assertions.*;
  * Hilary Cassidy Nguepi Nangmo
  * 220346887
  */
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CityServiceImplTest {
     @Autowired
-private CityServiceImpl cityService;
+    private CityServiceImpl cityService;
     @Autowired
     private CountryRepository countryRepository;
-//    @Order(1)
-//    @Test
-//    void getCityService() {
-//        cityService = CityServiceImpl.getCityService();
-//    }
+
 
     @Order(2)
     @Test
