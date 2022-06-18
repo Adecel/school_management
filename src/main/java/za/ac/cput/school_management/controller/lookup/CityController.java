@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/city/")
-public class CityControllerImpl {
+public class CityController {
     @Autowired
     private CityServiceImpl service;
 

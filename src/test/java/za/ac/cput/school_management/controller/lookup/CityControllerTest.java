@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-class CityControllerImplTest {
+class CityControllerTest {
 
     private String baseURL = "http://localhost:8080/city/";
 
@@ -29,7 +29,7 @@ class CityControllerImplTest {
     @Autowired
     private CountryRepository countryRepository;
 
-    CityControllerImplTest() throws Exception {
+    CityControllerTest() throws Exception {
 
     }
 
