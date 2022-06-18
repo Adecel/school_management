@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 
-//don't modify the class anymore, from here every thing is working till to the controller
+
 @Entity
 @Embeddable
 public class Name {
