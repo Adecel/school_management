@@ -25,7 +25,7 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Country save(Country country) throws Exception {
-        Country obj = CountryFactory.getCountry(country.getId(), country.getName());
+        Country obj = CountryFactory.getCountry(country.getCountryId(), country.getCountryName());
         return this.repository.save(country);
     }
 
@@ -41,16 +41,14 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public Optional<Country> findById(String id) {
-        return this.repository.findById(id);
+    public Optional<Country> findById(String countryId) {
+        return this.repository.findById(countryId);
     }
 
     @Override
-    public Optional<Country> deleteById(String id) {
-        Optional<Country> country = read(id);
-        if (country.isPresent()) {
-            delete(country.get());
-        }
+    public Optional<Country> deleteById(String countryId) {
+        Optional<Country> country = read(countryId);
+        country.ifPresent(this::delete);
 
         return country;
     }

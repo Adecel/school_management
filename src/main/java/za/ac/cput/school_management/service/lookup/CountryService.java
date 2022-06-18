@@ -13,8 +13,8 @@ import java.util.Optional;
 
 public interface CountryService extends IService<Country, String> {
 
-    Optional<Country> findById(String id);
+    Optional<Country> findById(String countryId);
 
-    Optional<Country> deleteById(String id);
+    Optional<Country> deleteById(String countryId);
 
 }
