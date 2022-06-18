@@ -12,14 +12,15 @@ import java.util.Objects;
 @Entity
 public class City
 {
-    @NotNull
+    @Id @NotNull
     private String id;
-    @NotNull
+   // @Column(insertable = false, updatable = false)  //I have add this dont remote we gona use it the controller
     private String name;
-    @Embedded
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "countryId",referencedColumnName = "id")
     private Country country;
 
-    protected City() {
+    public City() {
     }
 
     private City(Builder builder) {
@@ -40,48 +41,18 @@ public class City
         return country;
     }
 
-    public static class Builder {
-        private String id, name;
-        private Country country;
-
-        public Builder setId(String id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setCountry(Country country) {
-            this.country = country;
-            return this;
-        }
-
-        public Builder copy(City city) {
-            this.id = city.id;
-            this.name = city.name;
-            this.country = city.country;
-            return this;
-        }
-
-        public City build() {
-            return new City(this);
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         City city = (City) o;
-        return id.equals(city.id);
+        return id.equals(city.id) && name.equals(city.name) && country.equals(city.country);
     }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, name, country);
     }
 
     @Override
@@ -89,9 +60,29 @@ public class City
         return "City{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", countryId=" + country.getCountryId() +'\'' +
-                ", countryName=" + country.getCountryName() +'\'' +
+                ", country=" + country +
                 '}';
     }
+
+    public static class Builder{
+        private String id;
+        private String name;
+        private Country country;
+        public Builder (String id){
+            this.id = id;
+        }
+        public Builder buildName(String name){
+            this.name = name;
+            return this;
+        }
+        public Builder buildCountry(Country country){
+            this.country = country;
+            return this;
+        }
+        public City build(){
+            return new City(this);
+        }
+    }
+
 
 }
