@@ -2,21 +2,23 @@ package za.ac.cput.school_management.domain.lookup;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 //don't modify the class anymore, from here every thing is working till to the controller
 @Entity
 public class City
 {
     @Id @NotNull
     private String id;
-    @Column(insertable = false, updatable = false)  //I have add this dont remote we gona use it the controller
+   // @Column(insertable = false, updatable = false)  //I have add this dont remote we gona use it the controller
     private String name;
-    @Embedded private Country country;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "countryId",referencedColumnName = "id")
+    private Country country;
 
     public City() {
     }

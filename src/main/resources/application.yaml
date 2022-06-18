@@ -8,6 +8,6 @@ Spring:
       ddl-auto: create
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/schoolManagement-db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3307/schoolManagement-db?createDatabaseIfNotExist=true
     username: root
-    password: Mabi@2021
+    password:

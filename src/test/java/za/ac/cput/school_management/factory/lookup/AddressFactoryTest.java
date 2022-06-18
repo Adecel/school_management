@@ -1,9 +1,7 @@
 package za.ac.cput.school_management.factory.lookup;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 //import za.ac.cput.school_management.domain.lookup.Address;
-import za.ac.cput.school_management.domain.lookup.AddressT;
 import za.ac.cput.school_management.domain.lookup.City;
 import za.ac.cput.school_management.domain.lookup.Country;
 

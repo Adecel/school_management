@@ -2,6 +2,9 @@ package za.ac.cput.school_management.factory.student;
 /*
  * @author Adecel Rusty Mabiala
  * @StudentNumber 219197229
+ * @Project Term-2
+ * @Group 31
+ * @Role Team Leader and Developer
  */
 
 import za.ac.cput.school_management.domain.student.Student;
