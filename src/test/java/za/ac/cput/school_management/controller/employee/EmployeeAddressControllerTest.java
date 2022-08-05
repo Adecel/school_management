@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 
 class EmployeeAddressControllerTest {
     private String baseURL = "http://localhost:8080/employeeAddress/";

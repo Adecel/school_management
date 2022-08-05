@@ -10,12 +10,15 @@ import za.ac.cput.school_management.domain.lookup.Name;
 import za.ac.cput.school_management.repository.lookup.CityRepository;
 import za.ac.cput.school_management.service.employee.EmployeeAddressService;
 import za.ac.cput.school_management.service.employee.EmployeeService;
-import za.ac.cput.school_management.service.employee.impl.EmployeeAddressServiceImpl;
+//import za.ac.cput.school_management.service.employee.impl.EmployeeAddressServiceImpl;
 import za.ac.cput.school_management.service.lookup.CityService;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Hilary Cassidy Nguepi Nangmo
+ * 220346887
+ */
 @Service
 public class CityServiceImpl implements CityService {
     private static CityServiceImpl cityService = null;
@@ -63,13 +66,4 @@ public class CityServiceImpl implements CityService {
         return repository.findAll();
     }
 
-    public List<Name> getEmployeesInCity(String cityId){
-        List<Address> addresses = addressService.readAllByCityId(cityId);
-        for(Address address:addresses){
-            List<EmployeeAddress> employeeAddresses = employeeAddressService.findByAddress(address);
-            for(EmployeeAddress employeeAddress: employeeAddresses){
-                Employee employee = employeeService.
-            }
-        }
-    }
 }

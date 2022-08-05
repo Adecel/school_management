@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+//package za.ac.cput.school_management.service.employee;
+//
+//import za.ac.cput.school_management.domain.employee.EmployeeAddress;
+//
+//import za.ac.cput.school_management.service.IService;
+//
+//import java.util.List;
+//
+//public interface EmployeeAddressService  extends IService<EmployeeAddress, String> {
+//
+//    List<EmployeeAddress> findByStaffId(String staffId);
+//    void deleteById(String staffId);
+//}
+=======
 package za.ac.cput.school_management.service.employee;
 
 
@@ -16,11 +31,10 @@ import java.util.List;
 
 public interface EmployeeAddressService  extends IService<EmployeeAddress, String> {
 
-   
 
-    List<EmployeeAddress> findByAddress(Address address);
-    List<EmployeeAddress> deleteById(String staffId);
-    List<EmployeeAddress> deleteByStaffId(String staffId);
+    List<EmployeeAddress> findAll();
+
 
 
 }
+>>>>>>> origin/master
